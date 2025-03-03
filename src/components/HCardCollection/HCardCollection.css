@@ -1,0 +1,9 @@
+.hCardCollection {
+	--spacing: 5vw;
+	display: grid;
+	grid-auto-flow: column;
+	grid-column-gap: var(--spacing);
+	grid-auto-columns: auto;
+	justify-items: center;
+	overflow-x: auto;
+}

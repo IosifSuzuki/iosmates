@@ -1,0 +1,20 @@
+.item-underline {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+}
+
+.item-underline::after {
+	content: "";
+	position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: theme('colors.dark.hightlight');
+  transition: width 0.3s ease-in-out;
+}
+
+.item-underline:hover::after {
+  width: 100%;
+}
