@@ -14,14 +14,21 @@ export function Footer(props) {
 	return (
 		<footer className="mt-8">
 			<div className="container mx-auto py-7 flex flex-col gap-2">
-				<section className="cantacts self-end max-w-80 flex flex-col gap-2">
-					<PhoneNumbers phoneNumbers={contactForm.phoneNumbers} />
-					<div className="email">
-						<h4 className="font-bold">Work email: <a className="font-light text-dark-subtitle" href={emailHref}>{contactForm.email}</a></h4>
-					</div>
-					<div className="address">
-						<h4 className="font-bold">Address: <span className="font-light text-dark-subtitle">{contactForm.address}</span></h4>
-					</div>
+				<section className="contact-info flex flex-row justify-between items-center">
+					<section className="max-w-80">
+						<div className="address">
+							<a className="font-semibold text-sm" href="#">PRIVACY & POLICY </a>
+						</div>
+					</section>
+					<section className="cantacts max-w-80 flex flex-col gap-2">
+						<PhoneNumbers phoneNumbers={contactForm.phoneNumbers} />
+						<div className="email">
+							<h4 className="font-bold">Work email: <a className="font-light text-dark-subtitle" href={emailHref}>{contactForm.email}</a></h4>
+						</div>
+						<div className="address">
+							<h4 className="font-bold">Address: <span className="font-light text-dark-subtitle">{contactForm.address}</span></h4>
+						</div>
+					</section>
 				</section>
 				<div className="flex flex-col items-center gap-1">
 					<h3 className="font-bold text-sm text-dark-title">iosmates.com</h3>

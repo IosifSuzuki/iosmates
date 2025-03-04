@@ -1,10 +1,12 @@
 import "./index.css"
 import MainNavigation from "./../../components/MainNavigation/MainNavigation"
 import Intro from "./../../components/Intro/Intro"
-import {CardItemStyle, HCardCollection} from "./../../components/HCardCollection/HCardCollection"
+import {HCardItemStyle, HCardCollection} from "./../../components/HCardCollection/HCardCollection"
+import {VCardItemStyle, VCardCollection} from "./../../components/VCardCollection/VCardCollection"
 import {OverviewCardItem} from "./../../components/OverviewCard/OverviewCard"
 import {CardItemOption, OptionsCardItem} from "./../../components/OptionsCard/OptionsCard"
 import {ContactFooterForm, Footer} from "./../../components/Footer/Footer"
+import ContactForm from "./../../components/ContactForm/ContactForm"
 
 const benefits = {
 	"title": "Why choose us?".toUpperCase(),
@@ -49,6 +51,15 @@ const techStack = {
 	]
 }
 
+const services = {
+	"title": "Our Services".toUpperCase(),
+	"items": [
+		new OverviewCardItem("Project-based Outsourcing", "Need an iOS expert for your project? We provide a dedicated developer who integrates seamlessly with your team, ensuring efficient, high-quality development without long-term commitments."),
+		new OverviewCardItem("Custom iOS app development", "We build tailored iOS applications that fit your business needs, ensuring seamless performance and user experience."),
+		new OverviewCardItem("Dedicated developer teams", "Hire experienced iOS developers as an extension of your team, ensuring long-term collaboration and flexibility."),
+	]
+}
+
 const contactPhoneNumbers = [
 	"+380663174826",
 	"+36703509193"
@@ -61,8 +72,10 @@ export default function Index(props) {
 			<MainNavigation logoText="iosmates.com" />
 			<main className="flex flex-col gap-8">
 				<Intro />
-				<HCardCollection title={benefits.title} cardItems={benefits.items} style={CardItemStyle.PLAIN} />
-				<HCardCollection title={techStack.title} cardItems={techStack.items} style={CardItemStyle.OPTIONS} />
+				<HCardCollection title={benefits.title} cardItems={benefits.items} style={HCardItemStyle.PLAIN} />
+				<HCardCollection title={techStack.title} cardItems={techStack.items} style={HCardItemStyle.OPTIONS} />
+				<VCardCollection title={services.title} cardItems={services.items} style={VCardItemStyle.PLAIN} />
+				<ContactForm />
 			</main>
 			<Footer contactForm={contactForm}/>
 		</div>

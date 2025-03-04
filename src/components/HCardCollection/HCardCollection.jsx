@@ -3,7 +3,7 @@ import OverviewCard from "./../OverviewCard/OverviewCard"
 import HightlightTitle from "./../HightlightTitle/HightlightTitle"
 import OptionsCard from "./../OptionsCard/OptionsCard"
 
-export const CardItemStyle = {
+export const HCardItemStyle = {
 	PLAIN: "plain",
 	OPTIONS: "options",
 }
@@ -12,18 +12,18 @@ export function HCardCollection(props) {
 	const title = props.title;
 	const cardItems = props.cardItems;
 	const style = props.style;
-	let cardItemsJSx = [];
+	let cardItemsJSXs = [];
 
 	switch (style) {
-		case CardItemStyle.PLAIN:
-			cardItemsJSx = cardItems.map((cardItem, idx) => {
+		case HCardItemStyle.PLAIN:
+			cardItemsJSXs = cardItems.map((cardItem, idx) => {
 				return (
 					<OverviewCard key={idx} title={cardItem.title} subtitle={cardItem.subtitle} />
 				);
 			});
 			break;
-		case CardItemStyle.OPTIONS:
-			cardItemsJSx = cardItems.map((cardItem, idx) => {
+		case HCardItemStyle.OPTIONS:
+			cardItemsJSXs = cardItems.map((cardItem, idx) => {
 				return (
 					<OptionsCard key={idx} title={cardItem.title} options={cardItem.options} />
 				);
@@ -32,8 +32,8 @@ export function HCardCollection(props) {
 	return (
 		<section className="container mx-auto flex flex-col gap-4">
 			<HightlightTitle>{title}</HightlightTitle>
-			<div className="hCardCollection">
-				{cardItemsJSx}
+			<div className="hCardCollection p-2">
+				{cardItemsJSXs}
 			</div>
 		</section>
 	);

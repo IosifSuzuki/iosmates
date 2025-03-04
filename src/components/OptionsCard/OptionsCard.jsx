@@ -19,7 +19,7 @@ export default function OptionsCard(props) {
 		);
 	})
 	return (
-		<div className="bg-dark-overlay p-8 rounded-lg flex flex-col gap-4 justify-center">
+		<div className="options-card bg-dark-overlay p-8 rounded-lg flex flex-col gap-4 justify-center">
 			<h4 className="text-center font-bold text-dark-title">{title}</h4>
 			<ul>
 				{optionJSXs}
