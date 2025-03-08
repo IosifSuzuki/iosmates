@@ -1,12 +1,12 @@
 .item-underline {
-	display: inline-block;
-	position: relative;
-	text-decoration: none;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
 }
 
 .item-underline::after {
-	content: "";
-	position: absolute;
+  content: '';
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 0;

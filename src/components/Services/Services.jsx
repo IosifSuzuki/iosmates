@@ -1,5 +1,5 @@
-import "./Services.css"
+import './Services.css';
 
 export default function Services(props) {
-	const title = props.title;
+  const title = props.title;
 }
