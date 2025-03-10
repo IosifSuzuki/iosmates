@@ -1,5 +1,5 @@
 import './index.css';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
@@ -19,6 +19,7 @@ import {
 } from './../../components/OptionsCard/OptionsCard';
 import { ContactFooterForm, Footer } from './../../components/Footer/Footer';
 import ContactForm from './../../components/ContactForm/ContactForm';
+import Modal from './../../components/Modal/Modal';
 
 const benefits = {
   title: 'Why choose us?'.toUpperCase(),
@@ -93,7 +94,10 @@ const contactForm = new ContactFooterForm(
 
 export default function Index(props) {
   const contactFormRef = useRef();
-
+  const [isLoading, setLoading] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('');
+  const [modalDescription, setModalDescription] = useState('');
   useEffect(() => {
     const emailJsPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
     const throttleSeconds = 1;
@@ -107,25 +111,42 @@ export default function Index(props) {
   }, []);
 
   function handleContactUs(e) {
-    e.preventDefault();
-
     const emailJsTemplateID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
     const emailJsServiceID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
     var formData = new FormData(contactFormRef.current);
     let formObject = Object.fromEntries(formData.entries());
-
+    setLoading(true);
     emailjs
       .send(emailJsServiceID, emailJsTemplateID, formObject)
       .then((res) => {
-        console.log(res);
+        setModalTitle('Email Sent Successfully!');
+        setModalDescription(
+          'Your email has been sent successfully. We’ll get back to you as soon as possible. Thank you for reaching out!',
+        );
+        setModalOpen(true);
+        setLoading(false);
       })
       .catch((err) => {
-        console.error(err);
+        setModalTitle('Email Sending Failed!');
+        setModalDescription(
+          'There was an issue sending your email. Please try again! If the problem persists, contact support.',
+        );
+        setModalOpen(true);
+        setLoading(false);
       });
   }
 
   return (
     <div className='font-app bg-dark-background text-dark-regular'>
+      <Modal
+        title={modalTitle}
+        isOpen={isModalOpen}
+        onClose={(e) => {
+          setModalOpen(false);
+        }}
+      >
+        <p className='text-base text-dark-subtitle'>{modalDescription}</p>
+      </Modal>
       <MainNavigation logoText='iosmates.com' />
       <main className='flex flex-col gap-8'>
         <Intro />
@@ -147,6 +168,7 @@ export default function Index(props) {
         <ContactForm
           contactFormRef={contactFormRef}
           onSubmit={handleContactUs}
+          isLoading={isLoading}
         />
       </main>
       <Footer contactForm={contactForm} />

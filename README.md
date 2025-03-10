@@ -11,11 +11,15 @@ Currently, two official plugins are available:
 
 Run code for developing mode:
 
+```
 npm run dev
+```
 
 Do build for production code:
 
+```
 npm run build
+```
 
 ## Code formatting
 
