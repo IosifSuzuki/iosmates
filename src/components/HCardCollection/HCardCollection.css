@@ -3,7 +3,15 @@
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: var(--spacing);
-  grid-auto-columns: auto;
+  grid-auto-columns: calc(100vw - var(--spacing));
+  @media screen(md) {
+    grid-auto-columns: auto;
+  }
   justify-items: center;
-  overflow-x: auto;
+  align-items: stretch;
+  overflow-x: scroll;
+}
+
+.hCardCollection::-webkit-scrollbar {
+  display: none;  /* Hide scrollbar */
 }

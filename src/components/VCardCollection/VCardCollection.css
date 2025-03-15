@@ -1,5 +1,5 @@
 .vCardCollection {
-  --spacing: 1vw;
+  --spacing: 5vw;
   display: grid;
   grid-auto-flow: row;
   grid-row-gap: var(--spacing);

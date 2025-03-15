@@ -8,6 +8,7 @@ export const VCardItemStyle = {
 };
 
 export function VCardCollection(props) {
+  const id = props.id;
   const title = props.title;
   const style = props.style;
   const cardItems = props.cardItems;
@@ -30,7 +31,7 @@ export function VCardCollection(props) {
   }
 
   return (
-    <section className='container mx-auto flex flex-col gap-4'>
+    <section id={id} className='container mx-auto flex flex-col gap-4'>
       <HightlightTitle>{title}</HightlightTitle>
       <div className='vCardCollection p-2'>{cardItemsJSXs}</div>
     </section>

@@ -12,6 +12,7 @@ export function HCardCollection(props) {
   const title = props.title;
   const cardItems = props.cardItems;
   const style = props.style;
+  const id = props.id;
   let cardItemsJSXs = [];
 
   switch (style) {
@@ -38,7 +39,7 @@ export function HCardCollection(props) {
       });
   }
   return (
-    <section className='container mx-auto flex flex-col gap-4'>
+    <section id={id} className='container mx-auto flex flex-col gap-4'>
       <HightlightTitle>{title}</HightlightTitle>
       <div className='hCardCollection p-2'>{cardItemsJSXs}</div>
     </section>

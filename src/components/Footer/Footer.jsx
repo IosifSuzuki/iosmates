@@ -1,4 +1,8 @@
 import './Footer.css';
+
+import { useBreakpoint } from './../../hooks/useBreakpoint/useBreakpoint';
+import { isMobileScreen } from './../../utils/screen';
+
 import PhoneNumbers from './../PhoneNumbers/PhoneNumbers';
 
 export function ContactFooterForm(phoneNumbers, email, address) {
@@ -8,13 +12,41 @@ export function ContactFooterForm(phoneNumbers, email, address) {
 }
 
 export function Footer(props) {
+  const id = props.id;
   const date = new Date();
   const contactForm = props.contactForm;
   const emailHref = `mailto:${contactForm.email}`;
+
+  const breakpoint = useBreakpoint();
+  const isMobile = isMobileScreen(breakpoint);
+
+  let cantactsClassName = 'cantacts w-full';
+  if (isMobile) {
+    let correctedClassName = 'flex flex-col gap-2';
+    cantactsClassName = [
+      ...new Set([
+        ...cantactsClassName.split(' '),
+        ...correctedClassName.split(' '),
+      ]),
+    ]
+      .filter(Boolean)
+      .join(' ');
+  } else {
+    let correctedClassName = 'flex flex-row justify-between gap-2';
+    cantactsClassName = [
+      ...new Set([
+        ...cantactsClassName.split(' '),
+        ...correctedClassName.split(' '),
+      ]),
+    ]
+      .filter(Boolean)
+      .join(' ');
+  }
+
   return (
-    <footer className='mt-8'>
-      <div className='container mx-auto py-7 flex flex-col gap-2'>
-        <section className='contact-info flex flex-row justify-between items-center'>
+    <footer id={id} className='mt-8'>
+      <div className='container px-6 md:px-10 mx-auto py-7 flex flex-col gap-2'>
+        <section className={cantactsClassName}>
           <section className='max-w-80'>
             <div className='address'>
               <a className='font-semibold text-sm' href='#'>

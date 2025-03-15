@@ -22,6 +22,7 @@ const formDataValidation = {
 const requireCapitalizeFields = ['name', 'company', 'message'];
 
 export default function ContactForm(props) {
+  const id = props.id;
   const title = 'Contact form'.toUpperCase();
   const isLoading = props.isLoading;
   const onSubmit = props.onSubmit;
@@ -87,9 +88,9 @@ export default function ContactForm(props) {
     }
   }
   return (
-    <div className='container mx-auto'>
+    <div className='container px-6 md:px-10 mx-auto'>
       <HightlightTitle>{title}</HightlightTitle>
-      <form onSubmit={handleSubmit} ref={contactFormRef}>
+      <form id={id} onSubmit={handleSubmit} ref={contactFormRef}>
         <div className='grid gap-6 grid-cols-1'>
           <div className='flex flex-col gap-1'>
             <TextInput
