@@ -2,6 +2,7 @@ import './index.css';
 import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { contactForms } from './../../services/shared/data';
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
 import Intro from './../../components/Intro/Intro';
 import {
@@ -17,7 +18,7 @@ import {
   CardItemOption,
   OptionsCardItem,
 } from './../../components/OptionsCard/OptionsCard';
-import { ContactFooterForm, Footer } from './../../components/Footer/Footer';
+import Footer from './../../components/Footer/Footer';
 import ContactForm from './../../components/ContactForm/ContactForm';
 import Modal from './../../components/Modal/Modal';
 
@@ -87,13 +88,6 @@ const services = {
     ),
   ],
 };
-
-const contactPhoneNumbers = ['+380663174826', '+36703509193'];
-const contactForm = new ContactFooterForm(
-  contactPhoneNumbers,
-  'example@gmail.com',
-  '89434, Ukraine, reg. Zakarpatska, district Uzhhorodskyi, town Dovhe Pole, st. Holovna, build 95',
-);
 
 export default function Index(props) {
   const contactFormRef = useRef();
@@ -190,7 +184,7 @@ export default function Index(props) {
           isLoading={isLoading}
         />
       </main>
-      <Footer id='footer' contactForm={contactForm} />
+      <Footer id='footer' contactForms={contactForms} />
     </div>
   );
 }

@@ -7,22 +7,22 @@ export function items(isMobile) {
   return [
     {
       title: 'Services',
-      path: '#services',
+      path: '/iosmates/#services',
       style: ItemStyles.PLAIN,
     },
     {
       title: 'About us',
-      path: '#footer',
+      path: '/iosmates/#footer',
       style: ItemStyles.PLAIN,
     },
     {
       title: 'Our work',
-      path: '#',
+      path: '/iosmates/#',
       style: ItemStyles.PLAIN,
     },
     {
       title: "Let's talk",
-      path: '#contact_form',
+      path: '/iosmates/#contact_form',
       style: isMobile ? ItemStyles.PLAIN : ItemStyles.FILL,
     },
   ];

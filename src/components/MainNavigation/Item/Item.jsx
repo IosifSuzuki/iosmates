@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Item.css';
 
 export default function Item(props) {
@@ -14,9 +15,9 @@ export default function Item(props) {
 
   return (
     <li className={className}>
-      <a onClick={onClick} className={textClassName} href={path}>
+      <Link onClick={onClick} className={textClassName} to={path}>
         {title}
-      </a>
+      </Link>
     </li>
   );
 }
