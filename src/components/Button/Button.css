@@ -1,0 +1,20 @@
+.button {
+  position: relative;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  border-radius: 12px; 
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    theme(colors.dark.hightlight),
+    theme(colors.dark.secondary)
+  );
+  mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  mask-composite: exclude; 
+}

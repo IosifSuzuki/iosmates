@@ -49,7 +49,7 @@ export default function Footer(props) {
           <section className='max-w-80'>
             <div className='address'>
               <Link className='font-semibold text-sm' to='privacy-policy'>
-                PRIVACY & POLICY{' '}
+                PRIVACY POLICY{' '}
               </Link>
             </div>
           </section>

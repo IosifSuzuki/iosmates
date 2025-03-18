@@ -1,4 +1,4 @@
-import { useState } from 'React';
+import { useState } from 'react';
 import './ContactForm.css';
 import HightlightTitle from './../HightlightTitle/HightlightTitle';
 
@@ -150,7 +150,7 @@ export default function ContactForm(props) {
               <ErrorLabel>{formErrors.message}</ErrorLabel>
             )}
           </div>
-          <Button isLoading={isLoading}>Let’s Talk</Button>
+          <Button isLoading={isLoading}>{'Send message'.toUpperCase()}</Button>
         </div>
       </form>
     </div>

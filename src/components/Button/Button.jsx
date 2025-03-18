@@ -8,7 +8,7 @@ export default function Button(props) {
     <button
       type='submit'
       disabled={isLoading}
-      className='bg-dark-hightlight text-dark-subtitle hover:text-dark-title font-bold rounded-lg text-md p-2.5 text-center'
+      className='button text-dark-subtitle hover:text-dark-title font-extrabold md:font-bold text-md md:text-lg p-2.5 text-center'
     >
       {isLoading ? <Spinner /> : <></>} &nbsp; {text}
     </button>

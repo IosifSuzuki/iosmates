@@ -9,8 +9,8 @@ function ContactFooterForm(name, phoneNumbers, email, address, specialization) {
 export const contactForms = [
   new ContactFooterForm(
     'Tamás Simon',
-    ['+36703509193'],
-    'simon.tomi735@gmail.com',
+    ['+36206297197'],
+    'simon@iosmates.com',
     'Budapest, Váci út 1-3, 1062 Hungary',
     'CEO | Head of Sales',
   ),
