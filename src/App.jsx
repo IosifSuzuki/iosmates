@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <ScrollToAnchor />
       <Routes>
-        <Route path='iosmates'>
+        <Route>
           <Route index element={<Index />} />
           <Route path='privacy-policy' element={<PrivacyPolicy />} />
         </Route>
