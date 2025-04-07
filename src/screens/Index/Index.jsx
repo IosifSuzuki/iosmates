@@ -1,4 +1,4 @@
-import './index.css';
+import './Index.css';
 import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
