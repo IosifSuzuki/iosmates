@@ -2,7 +2,8 @@ import './Index.css';
 import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-import { contactForms } from './../../services/shared/data';
+import { contactForms, company } from './../../services/shared/data';
+
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
 import Intro from './../../components/Intro/Intro';
 import {
@@ -111,14 +112,20 @@ export default function Index(props) {
   }, []);
 
   useEffect(() => {
-    const updateHeight = () => {
-      if (mainHeaderRef.current && introRef.current) {
-        introRef.current.style.height = `${document.documentElement.clientHeight - mainHeaderRef.current.offsetHeight}px`;
-      }
+    const initialViewportHeight = window.innerHeight;
+
+    const updateIntroSize = () => {
+      const headerHeight = mainHeaderRef.current.offsetHeight;
+      introRef.current.style.height = `${initialViewportHeight - headerHeight}px`;
     };
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
+    const resizeObserver = new ResizeObserver(() => {
+      updateIntroSize();
+    });
+    resizeObserver.observe(mainHeaderRef.current);
+    updateIntroSize();
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, []);
 
   function handleContactUs(e) {
@@ -184,7 +191,7 @@ export default function Index(props) {
           isLoading={isLoading}
         />
       </main>
-      <Footer id='footer' contactForms={contactForms} />
+      <Footer id='footer' contactForms={contactForms} company={company} />
     </div>
   );
 }

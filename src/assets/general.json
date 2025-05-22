@@ -1,0 +1,60 @@
+{
+  "footer": {
+    "company": {
+      "name": "IOSMATE SOFTWARE Kft.",
+      "address": "1064 Budapest, Podmaniczky utca 57. 2nd floor, door no. 14, Hungary",
+      "taxNumber": "32814606-2-42",
+      "euVat": "HU32814606"
+    },
+    "contacts": [
+      {
+        "name": "Tamás Simon",
+        "phone": "+36206297197",
+        "email": "simon@iosmates.com",
+        "about": "Business, ideas or just a quick chat – I’m here when you need me.",
+        "languages": [
+          {
+            "name": "Hungarian",
+            "icon": "🇭🇺"
+          },
+          {
+            "name": "Ukrainian",
+            "icon": "🇺🇦"
+          },
+          {
+            "name": "English",
+            "icon": "🇬🇧"
+          },
+          {
+            "name": "Čeština",
+            "icon": "🇨🇿"
+          }
+        ]
+      },
+      {
+        "name": "Bogdan Petkanych",
+        "phone": "+420723569137",
+        "email": "petkanych.b@iosmates.com",
+        "about": "Reach out to me with any technical matters, I’ve got your back.",
+        "languages": [
+          {
+            "name": "Ukrainian",
+            "icon": "🇺🇦"
+          },
+          {
+            "name": "English",
+            "icon": "🇬🇧"
+          },
+          {
+            "name": "Slovenčina",
+            "icon": "🇸🇰"
+          },
+          {
+            "name": "Čeština",
+            "icon": "🇨🇿"
+          }
+        ]
+      }
+    ]
+  }
+}

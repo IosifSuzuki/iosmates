@@ -17,7 +17,7 @@ export function items(isMobile) {
     },
     {
       title: 'Our work',
-      path: '/#',
+      path: '/',
       style: ItemStyles.PLAIN,
     },
     {

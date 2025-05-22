@@ -1,5 +1,7 @@
 import './ButtonItem.css';
 
+import { Link } from 'react-router-dom';
+
 export default function ButtonItem(props) {
   const title = props.title;
   const path = props.path;
@@ -13,9 +15,9 @@ export default function ButtonItem(props) {
   ].join(' ');
   return (
     <li className={className}>
-      <a onClick={onClick} className={textClassName} href={path}>
+      <Link onClick={onClick} className={textClassName} to={path}>
         {title}
-      </a>
+      </Link>
     </li>
   );
 }

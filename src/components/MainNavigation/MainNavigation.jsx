@@ -36,7 +36,7 @@ export default function MainNavigation(props) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
-  function itemClickHandle() {
+  function itemClickHandler(path) {
     setIsMobileMenuOpen(false);
   }
 
@@ -69,7 +69,7 @@ export default function MainNavigation(props) {
         {isMobile && isMobileMenuOpen && (
           <div className='h-full bg-dark-background flex-grow'>
             <NavList
-              onClick={itemClickHandle}
+              onClick={itemClickHandler}
               isMobile={isMobile}
               className='h-full py-10 flex flex-col justify-center gap-5'
               items={menuItems}

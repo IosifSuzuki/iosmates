@@ -2,15 +2,19 @@ import { useRef } from 'react';
 
 import './PrivacyPolicy.css';
 
-import { contactForms } from './../../services/shared/data';
+import { company, contactForms } from './../../services/shared/data';
 
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
 import Footer from './../../components/Footer/Footer';
-import { dateFormatted } from './../../utils/date';
+
 import {
   ContactInfoStyle,
   ContactInfo,
 } from './../../components/ContactInfo/ContactInfo';
+
+import CompanyInfo from './../../components/CompanyInfo/CompanyInfo';
+
+import { dateFormatted } from './../../utils/date';
 
 const effectiveDate = new Date('2025-03-17');
 const lastUpdateDate = new Date('2025-03-17');
@@ -60,11 +64,14 @@ export default function PrivacyPolicy(props) {
           </section>
           <section className='flex flex-col gap-4'>
             <h2 className='text-left text-xl font-bold'>2. Who we are</h2>
+            <div className='indent-8 leading-8'>
+              <CompanyInfo company={company} />
+            </div>
             <div className='leading-6 flex flex-col gap-6 pl-8'>
               {contactInfoJSXs}
             </div>
             <div className='font-bold indent-8 leading-8'>
-              <p> Website hosting provider: GitHub Pages </p>
+              <p> Website hosting provider: Hostinger </p>
               <p> CRM provider: HubSpot</p>
               <p>Analytics provider: Google Analytics</p>
             </div>
@@ -146,7 +153,7 @@ export default function PrivacyPolicy(props) {
             <ul className='list-disc px-8 list-inside leading-8'>
               <li>
                 <b>Hosting provider:</b> Our website is hosted on{' '}
-                <b>GitHub Pages</b>, which may store publicly available website
+                <b>Hostinger</b>, which may store publicly available website
                 content but does not collect personal data.
               </li>
               <li>
@@ -172,12 +179,12 @@ export default function PrivacyPolicy(props) {
                   <p>Mountain View, CA 94043, United States</p>
                 </div>
                 <h4 className='text-left text-md font-bold'>
-                  5.1.2. GitHub Pages (hosting provider)
+                  5.1.2. Hostinger, UAB (hosting provider)
                 </h4>
                 <div className='px-8'>
-                  <p className='font-bold'>GitHub, Inc.</p>
-                  <p>88 Colin P. Kelly Jr. Street</p>
-                  <p> San Francisco, CA 94107, United States</p>
+                  <p className='font-bold'>Hostinger, UAB</p>
+                  <p>Jonavos g. 60C, 44192</p>
+                  <p>Kaunas, Lithuania</p>
                 </div>
                 <h4 className='text-left text-md font-bold'>
                   5.1.3. CRM provider (HubSpot)
@@ -243,7 +250,7 @@ export default function PrivacyPolicy(props) {
             </p>
             <ul className='list-disc px-8 list-inside leading-8'>
               <li>
-                <b>Secure website hosting</b> with <b>GitHub Pages</b>
+                <b>Secure website hosting</b> with <b>Hostinger</b>
               </li>
               <li>
                 <b>Restricted access</b> to customer data stored in{' '}
@@ -267,9 +274,9 @@ export default function PrivacyPolicy(props) {
             </h2>
             <p className='indent-8 leading-8'>
               Since we use{' '}
-              <b>Google Analytics, HubSpot CRM, and GitHub Pages hosting</b>,
-              your data may be processed in different jurisdictions, including
-              the <b>United States</b>.
+              <b>Google Analytics, HubSpot CRM, and Hostinger hosting</b>, your
+              data may be processed in different jurisdictions, including the{' '}
+              <b>United States</b>.
             </p>
             <p className='indent-8 leading-8'>
               We ensure that any data transfers comply with relevant data
@@ -297,9 +304,9 @@ export default function PrivacyPolicy(props) {
                 </a>
               </li>
               <li>
-                <b>GitHub privacy policy: </b>
-                <a href='https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement'>
-                  https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement
+                <b>Hostinger privacy policy: </b>
+                <a href='https://www.hostinger.com/legal/privacy-policy'>
+                  https://www.hostinger.com/legal/privacy-policy
                 </a>
               </li>
             </ul>
@@ -321,7 +328,7 @@ export default function PrivacyPolicy(props) {
           </section>
         </article>
       </main>
-      <Footer id='footer' contactForms={contactForms} />
+      <Footer id='footer' company={company} contactForms={contactForms} />
     </div>
   );
 }

@@ -1,24 +1,33 @@
-function ContactFooterForm(name, phoneNumbers, email, address, specialization) {
+import general from './../../assets/general.json';
+
+function ContactFooterForm(name, phone, email, about, languages) {
   this.name = name;
-  this.phoneNumbers = phoneNumbers;
+  this.phone = phone;
   this.email = email;
-  this.address = address;
-  this.specialization = specialization;
+  this.about = about;
+  this.languages = languages;
 }
 
-export const contactForms = [
-  new ContactFooterForm(
-    'Tamás Simon',
-    ['+36206297197'],
-    'simon@iosmates.com',
-    'Budapest, Váci út 1-3, 1062 Hungary',
-    'CEO | Head of Sales',
-  ),
-  new ContactFooterForm(
-    'Bogdan Petkanych',
-    ['+380663174826'],
-    'bogdanpetkanych@gmail.com',
-    '89434, Ukraine, reg. Zakarpatska, district Uzhhorodskyi, town Dovhe Pole',
-    'Team Lead, Technical Specialist',
-  ),
-];
+function Company(name, address, taxNumber, euVAT) {
+  this.name = name;
+  this.address = address;
+  this.taxNumber = taxNumber;
+  this.euVAT = euVAT;
+}
+
+export const company = new Company(
+  general.footer.company.name,
+  general.footer.company.address,
+  general.footer.company.taxNumber,
+  general.footer.company.euVat,
+);
+
+export const contactForms = general.footer.contacts.map((contact) => {
+  return new ContactFooterForm(
+    contact.name,
+    contact.phone,
+    contact.email,
+    contact.about,
+    contact.languages.map((language) => language.icon).join(' '),
+  );
+});
