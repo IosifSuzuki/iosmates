@@ -37,7 +37,7 @@ export default function PrivacyPolicy(props) {
     <div className='font-app bg-dark-background text-dark-regular'>
       <MainNavigation ref={mainHeaderRef} logoText='iosmates.com' />
       <main className='container px-6 md:px-10 pt-6 mx-auto flex flex-col'>
-        <h1 className='text-center text-xl font-bold pb-4 '>Privacy Policy</h1>
+        <h1 className='text-center text-xl font-bold pb-4'>Privacy Policy</h1>
         <div className='flex flex-col gap-2 text-left'>
           <p className='text-left'>
             <b>Effective Date:</b> {dateFormatted(effectiveDate)}

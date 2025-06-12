@@ -1,0 +1,42 @@
+.carousel-image {
+/*  transform: translateX(-100%);*/
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transform: translateX(${(props) => -props.currentIndex * 100}%);
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 10px;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+button.prev {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  left: 10px;
+}
+
+button.next {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  right: 10px;
+}
