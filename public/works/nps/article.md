@@ -48,4 +48,4 @@ This project reflects the practical, field-tested knowledge our team brings with
 
 And perhaps what matters most: the very same developer who contributed to this nationally recognized app is now part of your team when you choose iOSMates.
 
-Whether you're building a tourism app, an interactive map solution, or a product that requires seamless offline access - you’ll benefit from the kind of expertise that already made an impact at a national level.
+Whether you're building a tourism app, an interactive map solution, or a product that requires seamless offline access - **you’ll benefit from the kind of expertise that already made an impact at a national level.**

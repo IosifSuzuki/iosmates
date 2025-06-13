@@ -5,6 +5,8 @@ import Showdown from 'showdown';
 import './WorkDetails.css';
 
 import { company, contactForms } from './../../services/shared/data';
+import { findWork } from './../../services/shared/works';
+
 import Converter from './../../services/md/converter';
 
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
@@ -15,15 +17,9 @@ export default function WorkDetails(props) {
   const { name } = useParams();
   const mainHeaderRef = useRef();
   const [html, setHtml] = useState('');
+  const work = findWork(name);
 
-  const images = [
-    '/works/nps/carousel/1.png',
-    '/works/nps/carousel/2.png',
-    '/works/nps/carousel/3.png',
-    '/works/nps/carousel/4.png',
-    '/works/nps/carousel/5.png',
-  ];
-  const itemsJSX = images.map((path, idx) => {
+  const itemsJSX = work.screens.map((path, idx) => {
     return (
       <div
         key={idx}
@@ -38,7 +34,7 @@ export default function WorkDetails(props) {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch(`/works/${name}/article.md`);
+        const res = await fetch(work.article);
         if (!res.ok) {
           throw new Error('file not found');
         }

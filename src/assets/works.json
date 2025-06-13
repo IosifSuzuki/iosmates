@@ -1,0 +1,39 @@
+[
+  {
+    "name": "nps",
+    "article": "/works/nps/article.md",
+    "screens": [
+      "/works/nps/carousel/1.png",
+      "/works/nps/carousel/2.png",
+      "/works/nps/carousel/3.png",
+      "/works/nps/carousel/4.png",
+      "/works/nps/carousel/5.png"
+    ]
+  },
+  {
+    "name": "cobook",
+    "article": "/works/cobook/article.md",
+    "screens": [
+      "/works/cobook/carousel/1.png",
+      "/works/cobook/carousel/2.png",
+      "/works/cobook/carousel/3.png"
+    ]
+  },
+  {
+    "name": "appotek",
+    "article": "/works/appotek/article.md",
+    "screens": [
+      "/works/appotek/carousel/1.png",
+      "/works/appotek/carousel/2.png",
+      "/works/appotek/carousel/3.png"
+    ]
+  },
+  {
+    "name": "open_mode",
+    "article": "/works/open_mode/article.md",
+    "screens": [
+      "/works/open_mode/carousel/1.png",
+      "/works/open_mode/carousel/2.jpg"
+    ]
+  }
+]
