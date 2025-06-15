@@ -56,7 +56,7 @@ export default function Footer(props) {
         <section className={cantactsClassName}>
           <section className='max-w-80'>
             <div className='address flex flex-col gap-4'>
-              <Link className='font-semibold text-sm' to='privacy-policy'>
+              <Link className='font-semibold text-sm' to='/privacy-policy'>
                 PRIVACY POLICY{' '}
               </Link>
               <CompanyInfo company={company} />

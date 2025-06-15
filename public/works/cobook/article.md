@@ -1,8 +1,8 @@
-# CoBook
+# CoBook {title}
 
-## Platform: iOS
+## Platform: iOS {platoform}
 
-## Technologies:
+## Technologies: {technologies}
 
 - Swift
 - UIKit
@@ -13,9 +13,8 @@
 ## Share who you are - personally and professionally
 
 **CoBook** is a smart contact-sharing app designed to help users create, manage, and share their personal or business cards.
- 
-Whether networking at events or connecting with someone nearby, users can discover others based on location, interests, or needs - and instantly share their digital cards via QR codes or deep links.
 
+Whether networking at events or connecting with someone nearby, users can discover others based on location, interests, or needs - and instantly share their digital cards via QR codes or deep links.
 
 ## Our role in the project
 
@@ -30,7 +29,6 @@ Implemented a fast and user-friendly registration flow using SMS-based phone ver
 ### Card creation logic
 
 Engineered the front-end logic for creating and updating both personal and business cards, ensuring a smooth user experience across different use cases.
-
 
 ### Efficient backend integration
 
@@ -49,6 +47,3 @@ In the CoBook project, our team didn’t just redesign a UI. We rethought the ex
 And while CoBook focused on digital identity and contact sharing, the mindset we brought to it applies across industries. Whether you're building tools for health, education, e-commerce, or tourism, we bring the same commitment: practical thinking, resource-aware planning, and reliable delivery.
 
 You’re tapping into experience that’s already done the hard part.
-
-
-

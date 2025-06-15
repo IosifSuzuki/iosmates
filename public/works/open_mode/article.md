@@ -1,8 +1,8 @@
-# Open Mode
+# Open Mode {title}
 
-## Platform: iOS
+## Platform: iOS {platoform}
 
-## Technologies:
+## Technologies: {technologies}
 
 - Swift
 - UIKit
@@ -13,7 +13,6 @@
 **Open Mode** is a Web3-powered solution that enhances product authenticity, builds consumer trust, and protects against counterfeiting. Through NFC and blockchain integration, the app helps brands create secure, tamper-proof digital identities for physical products.
 
 Using the iOS app, registered users can generate encrypted NFC tags that are bound to a product and stored as NFTs on an external blockchain-backed server. These tags hold critical data such as product origin, price history, and ownership records - instantly accessible with a simple scan.
-
 
 ## Our role in the project
 

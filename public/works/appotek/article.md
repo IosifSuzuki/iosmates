@@ -1,8 +1,8 @@
-# Appotek
+# Appotek {title}
 
-## Platform: iOS
+## Platform: iOS {platoform}
 
-## Technologies:
+## Technologies: {technologies}
 
 - Swift
 - UIKit

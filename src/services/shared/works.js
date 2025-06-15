@@ -5,3 +5,7 @@ export function findWork(name) {
     return item.name == name;
   });
 }
+
+export function fetchWorks() {
+  return works;
+}
