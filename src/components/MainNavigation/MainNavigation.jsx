@@ -37,13 +37,12 @@ export default function MainNavigation(props) {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
+  function logoClickHandler() {
+    scrollToSection();
+  }
+
   function itemClickHandler(path) {
     setIsMobileMenuOpen(false);
-    // const hash = window.location.hash;
-    // if (hash) {
-    //   const section = hash.substring(1);
-    //   scrollToSection(section, 76);
-    // }
   }
 
   return (
@@ -54,7 +53,7 @@ export default function MainNavigation(props) {
       <nav className={navClassName}>
         <div className='flex flex-row justify-between items-center'>
           <div className='logo text-lg font-bold p-2'>
-            <Logo title={logoText} />
+            <Logo title={logoText} onClick={logoClickHandler} />
           </div>
           <div>
             {!isMobile && (

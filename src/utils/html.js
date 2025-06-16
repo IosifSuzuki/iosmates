@@ -32,5 +32,8 @@ export function scrollToSection(id, offset = 80) {
     const y = element.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top: y, behavior: 'smooth' });
     window.location.hash = `#${id}`;
+    return;
   }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.location.hash = '';
 }

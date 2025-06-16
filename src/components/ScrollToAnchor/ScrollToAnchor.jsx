@@ -19,7 +19,9 @@ export default function ScrollToAnchor(props) {
       if (element) {
         const id = hash.substring(1);
         scrollToSection(id, headerHeight);
+        return;
       }
+      scrollToSection();
     };
 
     tryScroll();
