@@ -88,9 +88,9 @@ export default function ContactForm(props) {
     }
   }
   return (
-    <div className='container px-6 md:px-10 mx-auto'>
+    <div id={id} className='container px-6 md:px-10 mx-auto'>
       <HightlightTitle>{title}</HightlightTitle>
-      <form id={id} onSubmit={handleSubmit} ref={contactFormRef}>
+      <form onSubmit={handleSubmit} ref={contactFormRef}>
         <div className='grid gap-6 grid-cols-1'>
           <div className='flex flex-col gap-1'>
             <TextInput

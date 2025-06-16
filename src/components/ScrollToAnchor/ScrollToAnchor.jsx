@@ -1,17 +1,29 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export default function ScrollToAnchor() {
+import { scrollToSection } from './../../utils/html';
+
+export default function ScrollToAnchor(props) {
   const { pathname, hash, key } = useLocation();
+  const padding = props.padding ?? 8;
   useEffect(() => {
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (!hash) {
       return;
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const header = document.querySelector('header');
+    const headerHeight = (header.offsetHeight ?? 76) + padding;
+
+    const tryScroll = () => {
+      const element = document.querySelector(hash);
+      if (element) {
+        const id = hash.substring(1);
+        scrollToSection(id, headerHeight);
+      }
+    };
+
+    tryScroll();
+    setTimeout(tryScroll, 50);
   }, [hash, key, pathname]);
 
   return null;

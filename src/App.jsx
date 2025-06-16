@@ -12,7 +12,7 @@ import Services from './screens/Services/Services';
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToAnchor />
+      <ScrollToAnchor padding={10} />
       <Routes>
         <Route index element={<Index />} />
         <Route path='privacy-policy' element={<PrivacyPolicy />} />

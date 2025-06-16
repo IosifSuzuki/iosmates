@@ -15,7 +15,13 @@ export default function Item(props) {
 
   return (
     <li className={className}>
-      <Link onClick={onClick} className={textClassName} to={path}>
+      <Link
+        onClick={() => {
+          onClick(path);
+        }}
+        className={textClassName}
+        to={path}
+      >
         {title}
       </Link>
     </li>

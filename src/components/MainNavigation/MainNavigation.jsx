@@ -4,6 +4,7 @@ import './MainNavigation.css';
 
 import { useBreakpoint } from './../../hooks/useBreakpoint/useBreakpoint';
 import { isMobileScreen } from './../../utils/screen';
+import { scrollToSection } from './../../utils/html';
 
 import { items, ItemStyles } from './Item';
 import Logo from './Logo/Logo';
@@ -38,6 +39,11 @@ export default function MainNavigation(props) {
 
   function itemClickHandler(path) {
     setIsMobileMenuOpen(false);
+    // const hash = window.location.hash;
+    // if (hash) {
+    //   const section = hash.substring(1);
+    //   scrollToSection(section, 76);
+    // }
   }
 
   return (
@@ -53,6 +59,7 @@ export default function MainNavigation(props) {
           <div>
             {!isMobile && (
               <NavList
+                onClick={itemClickHandler}
                 isMobile={isMobile}
                 className='flex flex-row items-center gap-5'
                 items={menuItems}
