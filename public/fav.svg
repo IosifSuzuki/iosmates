@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
   <!-- Light grey rounded rectangle background -->
-  <rect x="0" y="0" width="128" height="128" rx="32" fill="#6f7073"/>
+  <rect x="0" y="0" width="128" height="128" rx="32" fill="#272727"/>
   <!-- Colorful triangle with gradient, rotated 63deg around center, custom proportions -->
   <defs>
     <linearGradient id="triangleGradient" x1="0" y1="0" x2="1" y2="0">
