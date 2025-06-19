@@ -8,3 +8,7 @@ export function initGA() {
 export function loadPage(url) {
   ReactGA.send({ hitType: 'pageview', page: url });
 }
+
+export function event(name, params) {
+  ReactGA.event(name, params);
+}

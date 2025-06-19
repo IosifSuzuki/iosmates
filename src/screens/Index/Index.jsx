@@ -2,6 +2,7 @@ import './Index.css';
 import { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { event } from './../../services/analytics/main';
 import { contactForms, company } from './../../services/shared/data';
 
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
@@ -129,6 +130,9 @@ export default function Index(props) {
   }, []);
 
   function handleContactUs(e) {
+    event('button_click', {
+      label: 'contact_us',
+    });
     const emailJsTemplateID = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
     const emailJsServiceID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
     var formData = new FormData(contactFormRef.current);
