@@ -11,7 +11,7 @@ import {
   ValidationKeys,
   validate,
 } from './../../services/validation/validation';
-import { event } from './../../services/analytics/main';
+import { send_event } from './../../services/analytics/main';
 
 const formDataValidation = {
   name: ValidationKeys.Require,
@@ -84,7 +84,7 @@ export default function ContactForm(props) {
         }));
       }
     }
-    event('button_click', {
+    send_event('button_click', {
       label: 'contact_us',
     });
     if (!hasFormError) {
