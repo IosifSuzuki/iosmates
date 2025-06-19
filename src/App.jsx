@@ -1,6 +1,7 @@
 import './App.css';
 
 import ScrollToAnchor from './components/ScrollToAnchor/ScrollToAnchor';
+import Analytics from './components/Analytics/Analytics';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Index from './screens/Index/Index';
@@ -13,6 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToAnchor padding={10} />
+      <Analytics />
       <Routes>
         <Route index element={<Index />} />
         <Route path='privacy-policy' element={<PrivacyPolicy />} />
