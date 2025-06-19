@@ -5,8 +5,12 @@ export function initGA() {
   ReactGA.initialize(measurementID);
 }
 
-export function loadPage(url) {
-  ReactGA.send({ hitType: 'pageview', page: url });
+export function loadPage(url, referrer) {
+  ReactGA.send({
+    hitType: 'pageview',
+    page: url,
+    referrer: referrer,
+  });
 }
 
 export function send_event(name, params) {
