@@ -17,11 +17,11 @@ import MobileMenuToggleButton from './MobileMenuToggleButton/MobileMenuToggleBut
 function getThemeIcon(themeMode) {
   switch (themeMode) {
     case ThemeMode.BRIGHT:
-      return <Moon size={20} />;
+      return <Settings size={20} />;
     case ThemeMode.DARK:
       return <Sun size={20} />;
     case ThemeMode.AUTOMATIC:
-      return <Settings size={20} />;
+      return <Moon size={20} />;
   }
 }
 
