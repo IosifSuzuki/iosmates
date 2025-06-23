@@ -34,11 +34,13 @@ export default function PrivacyPolicy(props) {
   });
 
   return (
-    <div className='font-app bg-dark-background text-dark-regular'>
+    <div className='font-app bg-background text-regular'>
       <MainNavigation ref={mainHeaderRef} logoText='iosmates.com' />
       <main className='container px-6 md:px-10 pt-6 mx-auto flex flex-col'>
-        <h1 className='text-center text-xl font-bold pb-4'>Privacy Policy</h1>
-        <div className='flex flex-col gap-2 text-left'>
+        <h1 className='text-title text-center text-xl font-bold pb-4'>
+          Privacy Policy
+        </h1>
+        <div className='text-title flex flex-col gap-2 text-left'>
           <p className='text-left'>
             <b>Effective Date:</b> {dateFormatted(effectiveDate)}
           </p>
@@ -48,7 +50,9 @@ export default function PrivacyPolicy(props) {
         </div>
         <article className='flex flex-col gap-6 pt-6 text-base text-base'>
           <section className='flex flex-col gap-4 leading-8'>
-            <h2 className='text-left text-xl font-bold'>1. Introduction</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              1. Introduction
+            </h2>
             <p className='indent-8'>
               Welcome to <b>iOSMates.com</b> (we&rdquo;, &rdquo;our&rdquo;, or
               &rdquo;us&rdquo;). This privacy policy explains how we collect,
@@ -63,27 +67,29 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>2. Who we are</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              2. Who we are
+            </h2>
             <div className='indent-8 leading-8'>
               <CompanyInfo company={company} />
             </div>
             <div className='leading-6 flex flex-col gap-6 pl-8'>
               {contactInfoJSXs}
             </div>
-            <div className='font-bold indent-8 leading-8'>
+            <div className='text-title font-bold indent-8 leading-8'>
               <p> Website hosting provider: Hostinger </p>
               <p> CRM provider: HubSpot</p>
               <p>Analytics provider: Google Analytics</p>
             </div>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>
+            <h2 className='text-title text-left text-xl font-bold'>
               3. Information we collect
             </h2>
             <p className='indent-8 leading-8'>
               We collect the following data when you use our website:
             </p>
-            <h3 className='text-left text-lg font-bold'>
+            <h3 className='text-title text-left text-lg font-bold'>
               3.1. Information you provide voluntarily (via contact form){' '}
             </h3>
             <ul className='list-disc px-8 list-inside leading-8'>
@@ -92,7 +98,7 @@ export default function PrivacyPolicy(props) {
               <li>Company name (if provided)</li>
               <li>Message content (any details you choose to share)</li>
             </ul>
-            <h3 className='text-left text-lg font-bold'>
+            <h3 className='text-title text-left text-lg font-bold'>
               3.2. Information collected automatically (via Google Analytics)
             </h3>
             <ul className='list-disc px-8 list-inside leading-8'>
@@ -117,7 +123,7 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>
+            <h2 className='text-title text-left text-xl font-bold'>
               4. How we use your information
             </h2>
             <p className='indent-8 leading-8'>
@@ -143,7 +149,7 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>
+            <h2 className='text-title text-left text-xl font-bold'>
               5. Data sharing & third parties
             </h2>
             <p className='indent-8 leading-8'>
@@ -166,11 +172,11 @@ export default function PrivacyPolicy(props) {
               </li>
             </ul>
             <div className='flex flex-col gap-4 leading-8'>
-              <h3 className='text-left text-lg font-bold'>
+              <h3 className='text-title text-left text-lg font-bold'>
                 5.1. Third-party service provider addresses
               </h3>
               <div className='flex flex-col gap-4'>
-                <h4 className='text-left text-md font-bold'>
+                <h4 className='text-title text-left text-md font-bold'>
                   5.1.1. Google Analytics{' '}
                 </h4>
                 <div className='px-8'>
@@ -178,7 +184,7 @@ export default function PrivacyPolicy(props) {
                   <p>1600 Amphitheatre Parkway</p>
                   <p>Mountain View, CA 94043, United States</p>
                 </div>
-                <h4 className='text-left text-md font-bold'>
+                <h4 className='text-title text-left text-md font-bold'>
                   5.1.2. Hostinger, UAB (hosting provider)
                 </h4>
                 <div className='px-8'>
@@ -186,7 +192,7 @@ export default function PrivacyPolicy(props) {
                   <p>Jonavos g. 60C, 44192</p>
                   <p>Kaunas, Lithuania</p>
                 </div>
-                <h4 className='text-left text-md font-bold'>
+                <h4 className='text-title text-left text-md font-bold'>
                   5.1.3. CRM provider (HubSpot)
                 </h4>
                 <div className='px-8'>
@@ -198,7 +204,9 @@ export default function PrivacyPolicy(props) {
             </div>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>6. Data retention</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              6. Data retention
+            </h2>
             <p className='indent-8 leading-8'>
               We retain your data for the following periods:
             </p>
@@ -222,7 +230,9 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>7. Your rights</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              7. Your rights
+            </h2>
             <p className='indent-8 leading-8'>
               Depending on your location, you may have the right to:
             </p>
@@ -244,7 +254,9 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>8. Data security</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              8. Data security
+            </h2>
             <p className='indent-8 leading-8'>
               We implement the following security measures:
             </p>
@@ -269,7 +281,7 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>
+            <h2 className='text-title text-left text-xl font-bold'>
               9. International data transfers
             </h2>
             <p className='indent-8 leading-8'>
@@ -284,7 +296,7 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>
+            <h2 className='text-title text-left text-xl font-bold'>
               10. Cookies & tracking technologies
             </h2>
             <p className='indent-8 leading-8'>
@@ -312,7 +324,9 @@ export default function PrivacyPolicy(props) {
             </ul>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>11. Policy updates</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              11. Policy updates
+            </h2>
             <p className='indent-8 leading-8'>
               We may update this privacy policy from time to time. Changes will
               be posted on this page with an updated &rdquo;Last Updated&rdquo;
@@ -320,7 +334,9 @@ export default function PrivacyPolicy(props) {
             </p>
           </section>
           <section className='flex flex-col gap-4'>
-            <h2 className='text-left text-xl font-bold'>12. Contact us</h2>
+            <h2 className='text-title text-left text-xl font-bold'>
+              12. Contact us
+            </h2>
             <p className='indent-8 leading-8'>
               If you have any questions or requests regarding this privacy
               policy, you can contact us.

@@ -9,7 +9,7 @@ export default function Spinner(props) {
         width={width}
         height={height}
         aria-hidden='true'
-        className='inline text-gray-200 animate-spin fill-dark-hightlight'
+        className='inline text-gray-200 animate-spin fill-hightlight'
         viewBox='0 0 100 101'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'

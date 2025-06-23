@@ -9,7 +9,7 @@ export default function MobileMenuToggleButton(props) {
     <button
       onClick={onClick}
       aria-labelledby='Menu Toggle Button'
-      className='size-6 text-dark-subtitle'
+      className='size-6 text-subtitle'
     >
       {isMenuOpen ? <XIcon /> : <MenuIcon />}
     </button>

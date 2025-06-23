@@ -17,8 +17,8 @@ export default function OptionsCard(props) {
     return <li key={item.id}> {item.title} </li>;
   });
   return (
-    <div className='options-card bg-dark-overlay py-8 px-10 rounded-lg flex flex-col gap-4 justify-center'>
-      <h4 className='text-center font-bold text-dark-title'>{title}</h4>
+    <div className='options-card bg-overlay py-8 px-10 rounded-lg flex flex-col gap-4 justify-center'>
+      <h4 className='text-center font-bold text-title'>{title}</h4>
       <ol className='list-decimal'>{optionJSXs}</ol>
     </div>
   );

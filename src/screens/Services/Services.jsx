@@ -32,7 +32,7 @@ export default function Services(props) {
   });
 
   return (
-    <div className='font-app bg-dark-background text-dark-regular'>
+    <div className='font-app bg-background text-regular'>
       <MainNavigation ref={mainHeaderRef} logoText='iosmates.com' />
       <main className='container px-6 md:px-10 pt-6 mx-auto flex flex-col'>
         <div className='leading-8' dangerouslySetInnerHTML={{ __html: html }} />

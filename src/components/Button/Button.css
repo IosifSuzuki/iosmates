@@ -10,8 +10,8 @@
   padding: 2px;
   background: linear-gradient(
     90deg,
-    theme(colors.dark.hightlight),
-    theme(colors.dark.secondary)
+    theme(colors.hightlight),
+    theme(colors.secondary)
   );
   mask: 
     linear-gradient(#000 0 0) content-box, 

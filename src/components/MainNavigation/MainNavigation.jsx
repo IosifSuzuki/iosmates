@@ -1,26 +1,49 @@
 import { useState } from 'react';
+import { Settings, Moon, Sun } from 'lucide-react';
 
 import './MainNavigation.css';
 
 import { useBreakpoint } from './../../hooks/useBreakpoint/useBreakpoint';
+import { useTheme } from './../../provider/theme/theme';
+import { ThemeMode } from './../../provider/theme/config';
 import { isMobileScreen } from './../../utils/screen';
 import { scrollToSection } from './../../utils/html';
 
-import { items, ItemStyles } from './Item';
+import { items, ItemStyles, ItemTag } from './Item';
 import Logo from './Logo/Logo';
 import NavList from './NavList/NavList';
 import MobileMenuToggleButton from './MobileMenuToggleButton/MobileMenuToggleButton';
 
+function getThemeIcon(themeMode) {
+  switch (themeMode) {
+    case ThemeMode.BRIGHT:
+      return <Moon size={20} />;
+    case ThemeMode.DARK:
+      return <Sun size={20} />;
+    case ThemeMode.AUTOMATIC:
+      return <Settings size={20} />;
+  }
+}
+
+function getThemeTitle(themeMode, isMobile) {
+  return isMobile ? ThemeMode.title(themeMode) : '';
+}
+
 export default function MainNavigation(props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { themeMode, toggleThemeMode } = useTheme();
   const ref = props.ref;
   const breakpoint = useBreakpoint();
   const isMobile = isMobileScreen(breakpoint);
 
-  const menuItems = items(isMobile);
+  const menuItems = items(
+    isMobile,
+    getThemeIcon(themeMode),
+    getThemeTitle(themeMode, isMobile),
+  );
   const logoText = props.logoText;
   let navClassName =
-    'container px-6 md:px-10 flex-col w-full mx-auto py-4 text-dark-subtitle';
+    'container px-6 md:px-10 flex-col w-full mx-auto py-4 text-subtitle';
   if (isMobile && isMobileMenuOpen) {
     const mobileNavClassName = 'h-screen';
     navClassName = [
@@ -41,13 +64,20 @@ export default function MainNavigation(props) {
     scrollToSection();
   }
 
-  function itemClickHandler(path) {
-    setIsMobileMenuOpen(false);
+  function itemClickHandler(tag) {
+    switch (tag) {
+      case ItemTag.THEME:
+        toggleThemeMode();
+        break;
+      default:
+        setIsMobileMenuOpen(false);
+        break;
+    }
   }
 
   return (
     <header
-      className='main-header bg-dark-background w-full shadow-sm shadow-neutral-700'
+      className='main-header bg-background w-full shadow-sm shadow-separate'
       ref={ref}
     >
       <nav className={navClassName}>
@@ -73,7 +103,7 @@ export default function MainNavigation(props) {
           </div>
         </div>
         {isMobile && isMobileMenuOpen && (
-          <div className='h-full bg-dark-background flex-grow'>
+          <div className='h-full bg-background flex-grow'>
             <NavList
               onClick={itemClickHandler}
               isMobile={isMobile}

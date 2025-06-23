@@ -4,10 +4,10 @@ export default function WorkItem(props) {
   const contentHTML = props.contentHTML;
   const link = props.link;
   return (
-    <div className='flex flex-col gap-4 bg-dark-background py-4'>
+    <div className='flex flex-col gap-4 bg-background py-4'>
       <div dangerouslySetInnerHTML={{ __html: contentHTML }} />
       <a
-        className='font-semibold text-base text-dark-title hover:text-dark-hightlight transition duration-300'
+        className='font-semibold text-base text-subtitle hover:text-hightlight transition duration-300'
         href={link}
       >
         Explore more ...

@@ -7,7 +7,7 @@ export default function Logo(props) {
   const onClick = props.onClick;
   return (
     <Link
-      className='hover:text-dark-hightlight transition-colors duration-300'
+      className='hover:text-hightlight transition-colors duration-300'
       to='/'
       onClick={onClick}
     >

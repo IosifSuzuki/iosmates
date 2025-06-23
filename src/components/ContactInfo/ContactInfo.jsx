@@ -14,18 +14,18 @@ export function ContactInfo(props) {
     <section className='cantacts max-w-80 flex flex-col gap-2'>
       {style === ContactInfoStyle.FULL && (
         <div className='name'>
-          <p className='font-bold text-dark-subtitle'>
+          <p className='font-bold text-subtitle'>
             <a href={emailHref}> {contactForm.name}</a>
           </p>
         </div>
       )}
       <div className='specialization'>
-        <p className='font-light text-dark-subtitle'>{contactForm.about}</p>
+        <p className='font-light text-subtitle'>{contactForm.about}</p>
       </div>
       <div className='phone'>
         <p className='font-bold'>
           Phone:{' '}
-          <a className='font-light text-dark-subtitle' href={emailHref}>
+          <a className='font-light text-subtitle' href={emailHref}>
             {contactForm.phone}
           </a>
         </p>
@@ -33,7 +33,7 @@ export function ContactInfo(props) {
       <div className='email'>
         <p className='font-bold'>
           Email:{' '}
-          <a className='font-light text-dark-subtitle' href={emailHref}>
+          <a className='font-light text-subtitle' href={emailHref}>
             {contactForm.email}
           </a>
         </p>

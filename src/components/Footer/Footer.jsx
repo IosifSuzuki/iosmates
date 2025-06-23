@@ -67,10 +67,10 @@ export default function Footer(props) {
           </section>
         </section>
         <div className='flex flex-col items-center gap-1'>
-          <h3 className='font-bold text-dark-title'>
+          <h3 className='font-bold text-title'>
             Your partner in iOS development
           </h3>
-          <h4 className='text-dark-title text-center'>
+          <h4 className='text-title text-center'>
             © {date.getFullYear()} {company.name} All rights reserved.
           </h4>
         </div>

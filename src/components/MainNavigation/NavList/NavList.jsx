@@ -3,6 +3,7 @@ import './NavList.css';
 import Item from './../Item/Item';
 import { ItemStyles } from './../Item';
 import ButtonItem from './../ButtonItem/ButtonItem';
+import IconItem from './../IconItem/IconItem';
 
 export default function NavList(props) {
   const items = props.items;
@@ -22,13 +23,12 @@ export default function NavList(props) {
         let textClassName = '';
         let className = '';
         if (!isMobile) {
-          className =
-            'hover:text-dark-highlight transition-colors duration-300';
+          className = 'hover:text-highlight transition-colors duration-300';
           textClassName = 'item-underline';
         }
         return (
           <Item
-            onClick={onClick}
+            onClick={onClick.bind(undefined, item.tag)}
             key={idx}
             title={item.title}
             path={item.path}
@@ -39,10 +39,19 @@ export default function NavList(props) {
       case ItemStyles.FILL:
         return (
           <ButtonItem
-            onClick={onClick}
+            onClick={onClick.bind(undefined, item.tag)}
             key={idx}
             title={item.title}
             path={item.path}
+          />
+        );
+      case ItemStyles.ICON:
+        return (
+          <IconItem
+            icon={item.icon}
+            title={item.title}
+            key={idx}
+            onClick={onClick.bind(undefined, item.tag)}
           />
         );
     }

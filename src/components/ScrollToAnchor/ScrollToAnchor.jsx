@@ -8,6 +8,7 @@ export default function ScrollToAnchor(props) {
   const padding = props.padding ?? 8;
   useEffect(() => {
     if (!hash) {
+      scrollToSection();
       return;
     }
 

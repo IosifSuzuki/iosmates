@@ -62,7 +62,7 @@ export default function OurWorks(props) {
             {isLastItem ? (
               <></>
             ) : (
-              <hr className='border-t border-dark-subtitle opacity-60' />
+              <hr className='border-t border-separate opacity-60' />
             )}
           </div>
         );
@@ -71,7 +71,7 @@ export default function OurWorks(props) {
     })();
   }, []);
   return (
-    <div className='font-app bg-dark-background text-dark-regular'>
+    <div className='font-app bg-background text-regular'>
       <MainNavigation ref={mainHeaderRef} logoText='iosmates.com' />
       <main className='container px-6 md:px-10 pt-6 mx-auto flex flex-col'>
         {workItemsJSX}

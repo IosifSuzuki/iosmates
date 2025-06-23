@@ -11,7 +11,7 @@
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: theme('colors.dark.hightlight');
+  background-color: theme('colors.hightlight');
   transition: width 0.3s ease-in-out;
 }
 

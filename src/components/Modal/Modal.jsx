@@ -27,10 +27,10 @@ export default function Modal(props) {
       <div className='max-w-2xl w-full'>
         <div className='bg-gray-700 rounded-lg shadow-sm'>
           <div className='flex items-center justify-between p-4 border-b rounded-t border-gray-600'>
-            <h3 className='text-2xl font-semibold text-dark-title'>{title}</h3>
+            <h3 className='text-2xl font-semibold text-title'>{title}</h3>
             <button
               type='button'
-              className='text-dark-subtitle bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-white'
+              className='text-subtitle bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-white'
               onClick={onClose}
             >
               <svg

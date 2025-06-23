@@ -1,13 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 
-const darkPallets = {
-  background: '#272727',
-  overlay: '#04080F',
-  title: '#FFFFFF',
-  subtitle: '#DEDEDE',
-  regular: '#D4D4D4',
-  hightlight: '#2ca0e7',
-  secondary: '#2EB62C',
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
+const pallets = {
+  background: withOpacity('--color-background'),
+  overlay: withOpacity('--color-overlay'),
+  title: withOpacity('--color-title'),
+  subtitle: withOpacity('--color-subtitle'),
+  regular: withOpacity('--color-regular'),
+  hightlight: withOpacity('--color-hightlight'),
+  secondary: withOpacity('--color-secondary'),
+  separate: withOpacity('--color-separate'),
 };
 
 export default {
@@ -15,7 +25,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: darkPallets,
+        ...pallets,
       },
       fontFamily: {
         app: ['sans-serif'],

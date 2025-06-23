@@ -2,6 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Your base theme settings */
+@layer base {
+  html[data-theme="dark"] {
+    --color-background: 39, 39, 39;
+    --color-overlay: 4, 8, 15;
+    --color-title: 255, 255, 255;
+    --color-subtitle: 222, 222, 222;
+    --color-regular: 212, 212, 212;
+    --color-hightlight: 44, 160, 231;
+    --color-secondary: 46, 182, 44;
+    --color-separate: 60, 60, 60;
+  }
+
+  html, html[data-theme="bright"] {
+    --color-background: 255, 255, 255;
+    --color-overlay: 243, 244, 246;
+    --color-title: 17, 24, 39;
+    --color-subtitle: 55, 65, 81;
+    --color-regular: 75, 85, 99;
+    --color-hightlight: 37, 99, 235;
+    --color-secondary: 22, 163, 74;
+    --color-separate: 224, 236, 255;
+  }
+
+/*html[data-theme="dark"] {
+    --color-background: #272727;
+    --color-overlay: #04080F;
+    --color-title: #FFFFFF;
+    --color-subtitle: #DEDEDE;
+    --color-regular: #D4D4D4;
+    --color-hightlight: #2ca0e7;
+    --color-secondary: #2EB62C;
+    --color-separate: #3C3C3C;
+  }
+  html, html[data-theme="bright"] {
+    --color-background: #FFFFFF;
+    --color-overlay: #F3F4F6;
+    --color-title: #111827;
+    --color-subtitle: #374151;
+    --color-regular: #4B5563;
+    --color-hightlight: #2563EB;
+    --color-secondary: #16A34A;
+    --color-separate: #E0ECFF;
+  }*/
+}
+
 :root {
   --navbar-height: 80px;
 }

@@ -155,7 +155,7 @@ export default function Index(props) {
   }
 
   return (
-    <div className='font-app bg-dark-background text-dark-regular'>
+    <div className='font-app bg-background text-regular'>
       <Modal
         title={modalTitle}
         isOpen={isModalOpen}
@@ -163,7 +163,7 @@ export default function Index(props) {
           setModalOpen(false);
         }}
       >
-        <p className='text-base text-dark-subtitle'>{modalDescription}</p>
+        <p className='text-base text-subtitle'>{modalDescription}</p>
       </Modal>
       <MainNavigation ref={mainHeaderRef} logoText='iosmates.com' />
       <main className='flex flex-col gap-8'>

@@ -11,10 +11,7 @@ export default function TextInput(props) {
 
   return (
     <div>
-      <label
-        htmlFor={id}
-        className='block mb-2 text-sm font-medium text-dark-title'
-      >
+      <label htmlFor={id} className='block mb-2 text-sm font-medium text-title'>
         {labelText}{' '}
         {isRequired ? (
           <span className='text-red-700 font-bold text-lg'>*</span>
@@ -28,7 +25,7 @@ export default function TextInput(props) {
         name={id}
         value={value}
         onChange={onChange}
-        className='text-input text-dark-title bg-dark-background text-sm rounded-lg focus:border-dark-hightlight block w-full p-2.5'
+        className='border-2 border-separate focus:border-transparent text-title bg-background text-sm rounded-lg block w-full p-2.5'
         placeholder={placeholder}
       />
     </div>

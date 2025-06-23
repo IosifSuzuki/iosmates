@@ -72,7 +72,7 @@ export default function Intro(props) {
       <img className={imageClassName} src={bgImages[currentBannerIndex]} />
       <section className='intro'>
         <div className='container px-6 md:px-10 mx-auto h-full flex flex-col justify-center items-center gap-2 text-center'>
-          <div className='flex flex-col gap-2 p-8 rounded-lg bg-opacity-70 bg-dark-overlay'>
+          <div className='flex flex-col gap-2 p-8 rounded-lg bg-opacity-70 bg-overlay'>
             <h3 className='text-2xl font-semibold pb-4'>
               Welcome to iosmates.com!
             </h3>

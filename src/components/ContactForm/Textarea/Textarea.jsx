@@ -10,10 +10,7 @@ export default function Textarea(props) {
 
   return (
     <div>
-      <label
-        htmlFor={id}
-        className='block mb-2 text-sm font-medium text-dark-title'
-      >
+      <label htmlFor={id} className='block mb-2 text-sm font-medium text-title'>
         {labelText}{' '}
         {isRequired ? (
           <span className='text-red-700 font-bold text-lg'>*</span>
@@ -27,7 +24,7 @@ export default function Textarea(props) {
         rows='6'
         value={value}
         onChange={onChange}
-        className='text-area p-2.5 w-full text-sm bg-dark-background text-dark-title rounded-lg focus:border-dark-hightlight'
+        className='rounded-lg border-2 border-separate focus:border-transparent p-2.5 w-full text-sm bg-background text-title'
         placeholder={placeholder}
       ></textarea>
     </div>
