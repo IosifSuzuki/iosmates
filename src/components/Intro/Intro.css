@@ -1,6 +1,54 @@
-.intro {
+.intro-title {
+  font-size: clamp(3.5rem, 9vw, 6.4rem);
+}
+
+.circle {
   position: absolute;
-  top: 0;
-  height: 100%;
-  width: 100%;
+  border: 2px solid rgb(var(--color-hightlight));
+  border-radius: 50%;
+  box-shadow: inset 0 0 60px rgb(var(--color-hightlight));
+  opacity: 0;
+  transform: translate(-50%,-50%) scale(.25);
+  animation: circle-grow 1.6s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+@keyframes circle-grow{
+  0% {
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.25)
+  }
+  100% {
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1)
+  }
+}
+
+.circle.one {
+  width: 320px;
+  height: 320px;
+  animation-delay: .3s;
+}
+
+.circle.two {
+  width: 640px;
+  height: 640px;
+  animation-delay: .6s;
+}
+
+.circle.three {
+  width: 960px;
+  height: 960px;
+  animation-delay: .9s;
+}
+
+.circle.four {
+  width: 1200px;
+  height: 1200px;
+  animation-delay: 1.2s;
+}
+
+.circle.five {
+  width: 1440px;
+  height: 1440px;
+  animation-delay: 1.5s;
 }

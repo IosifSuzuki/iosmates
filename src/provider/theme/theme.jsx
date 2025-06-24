@@ -79,7 +79,9 @@ export const ThemeProvider = ({ children }) => {
   }, [themeMode]);
 
   return (
-    <ThemeContext.Provider value={{ themeMode, toggleThemeMode }}>
+    <ThemeContext.Provider
+      value={{ themeMode, toggleThemeMode, isClientGeolocationAvailable }}
+    >
       {children}
     </ThemeContext.Provider>
   );

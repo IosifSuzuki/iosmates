@@ -1,11 +1,9 @@
 import './HCardCollection.css';
-import OverviewCard from './../OverviewCard/OverviewCard';
 import HightlightTitle from './../HightlightTitle/HightlightTitle';
-import OptionsCard from './../OptionsCard/OptionsCard';
+import GradientCard from './../GradientCard/GradientCard';
 
 export const HCardItemStyle = {
-  PLAIN: 'plain',
-  OPTIONS: 'options',
+  GRADIENT: 'gradient',
 };
 
 export function HCardCollection(props) {
@@ -16,32 +14,27 @@ export function HCardCollection(props) {
   let cardItemsJSXs = [];
 
   switch (style) {
-    case HCardItemStyle.PLAIN:
+    case HCardItemStyle.GRADIENT:
       cardItemsJSXs = cardItems.map((cardItem, idx) => {
         return (
-          <OverviewCard
+          <GradientCard
+            className='flex-1 max-w-xs'
             key={idx}
+            icon={cardItem.icon}
             title={cardItem.title}
             subtitle={cardItem.subtitle}
           />
         );
       });
       break;
-    case HCardItemStyle.OPTIONS:
-      cardItemsJSXs = cardItems.map((cardItem, idx) => {
-        return (
-          <OptionsCard
-            key={idx}
-            title={cardItem.title}
-            options={cardItem.options}
-          />
-        );
-      });
   }
   return (
-    <section id={id} className='container mx-auto flex flex-col gap-4'>
+    <section
+      id={id}
+      className='container mx-auto px-6 md:px-10 flex flex-col gap-6'
+    >
       <HightlightTitle>{title}</HightlightTitle>
-      <div className='hCardCollection p-2'>{cardItemsJSXs}</div>
+      <div className='flex flex-row flex-wrap gap-2'>{cardItemsJSXs}</div>
     </section>
   );
 }

@@ -8,16 +8,15 @@ export function OverviewCardItem(title, subtitle) {
 export default function OverviewCard(props) {
   const title = props.title;
   const subtitle = props.subtitle;
-  const extraClassName = props.className || '';
-  let containerClassName =
-    'overview-card bg-overlay p-8 rounded-lg flex flex-col gap-4 justify-center';
-  containerClassName = [extraClassName.trim(), containerClassName.trim()].join(
-    ' ',
-  );
+  const extraClassName = props.className ?? '';
+  let outerClassName = 'overview-card';
+  const className = [extraClassName.trim(), outerClassName.trim()].join(' ');
   return (
-    <div className={containerClassName}>
-      <h4 className='text-center font-bold text-title'>{title}</h4>
-      <p className='text-center font-normal text-subtitle'>{subtitle}</p>
+    <div className={className}>
+      <div className='content p-4 bg-overlay flex flex-col gap-4 justify-center'>
+        <h3 className='text-center font-bold text-title text-xl'>{title}</h3>
+        <p className='text-center font-normal text-subtitle'>{subtitle}</p>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import './Index.css';
 import { useRef, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 import { contactForms, company } from './../../services/shared/data';
@@ -26,18 +28,21 @@ import Modal from './../../components/Modal/Modal';
 const benefits = {
   title: 'Why choose us?'.toUpperCase(),
   items: [
-    new OverviewCardItem(
-      'Cost-effective',
-      'We provide highly skilled iOS developers at competitive rates, ensuring quality without unnecessary costs.',
-    ),
-    new OverviewCardItem(
-      'Skilled developers',
-      'Our team of experts specializes in the latest iOS development technologies, including SwiftUI, SwiftData, Combine, Augmented Reality with SceneKit and RealityKit. In addition to working with cutting-edge technologies, our team has experienced developers with the knowledge to work on projects built with Objective-C and UIKit.',
-    ),
-    new OverviewCardItem(
-      'Flexible models',
-      'Choose a model that fits your needs: dedicated developers, project-based work, or a hybrid approach.',
-    ),
+    {
+      icon: <CheckCircle color='#fff' size={28} strokeWidth={2} />,
+      title: '20-30 % cheaper',
+      subtitle: 'Lower rates than local hires with no compromise on seniority.',
+    },
+    {
+      icon: <CheckCircle color='#fff' size={28} strokeWidth={2} />,
+      title: '8-week launches',
+      subtitle: 'Proven playbook ships version 1 to the App Store—fast.',
+    },
+    {
+      icon: <CheckCircle color='#fff' size={28} strokeWidth={2} />,
+      title: 'Senior-only team',
+      subtitle: 'Every engineer has 5–10 years shipping Swift in production.',
+    },
   ],
 };
 
@@ -76,21 +81,18 @@ const services = {
   title: 'Our Services'.toUpperCase(),
   items: [
     new OverviewCardItem(
-      'Project-based Outsourcing',
-      'Need an iOS expert for your project? We provide a dedicated developer who integrates seamlessly with your team, ensuring efficient, high-quality development without long-term commitments. Need an iOS expert for your project? We provide a dedicated developer who integrates seamlessly with your team, ensuring efficient, high-quality development without long-term commitments',
+      'Custom iOS App Development',
+      'Own the App Store We craft pixel-perfect Swift / SwiftUI apps that launch fast and run flawlessly. From discovery through QA & release – we ship, you scale.',
     ),
     new OverviewCardItem(
-      'Custom iOS app development',
-      'We build tailored iOS applications that fit your business needs, ensuring seamless performance and user experience.',
-    ),
-    new OverviewCardItem(
-      'Dedicated developer teams',
-      'Hire experienced iOS developers as an extension of your team, ensuring long-term collaboration and flexibility.',
+      'On-Demand iOS Engineers',
+      'Scale without hiring headaches Plug vetted senior iOS engineers into your workflow in under 14 days. Velocity, peer reviews, zero onboarding drama – just results.',
     ),
   ],
 };
 
 export default function Index(props) {
+  const navigate = useNavigate();
   const contactFormRef = useRef();
   const mainHeaderRef = useRef();
   const introRef = useRef();
@@ -166,23 +168,23 @@ export default function Index(props) {
         <p className='text-base text-subtitle'>{modalDescription}</p>
       </Modal>
       <MainNavigation ref={mainHeaderRef} logoText='iosmates.com' />
-      <main className='flex flex-col gap-8'>
-        <Intro ref={introRef} />
-        <HCardCollection
-          title={benefits.title}
-          cardItems={benefits.items}
-          style={HCardItemStyle.PLAIN}
-        />
-        <HCardCollection
-          title={techStack.title}
-          cardItems={techStack.items}
-          style={HCardItemStyle.OPTIONS}
+      <main className='flex flex-col gap-10'>
+        <Intro
+          ref={introRef}
+          onClick={() => {
+            navigate('/#services');
+          }}
         />
         <VCardCollection
           id='services'
           title={services.title}
           cardItems={services.items}
           style={VCardItemStyle.PLAIN}
+        />
+        <HCardCollection
+          title={benefits.title}
+          cardItems={benefits.items}
+          style={HCardItemStyle.GRADIENT}
         />
         <ContactForm
           id='contact_form'

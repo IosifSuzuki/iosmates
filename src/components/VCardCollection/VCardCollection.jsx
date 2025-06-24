@@ -23,7 +23,7 @@ export function VCardCollection(props) {
             key={idx}
             title={cardItem.title}
             subtitle={cardItem.subtitle}
-            className='w-full'
+            className='w-4/5 md:w-1/2'
           />
         );
       });
@@ -33,7 +33,7 @@ export function VCardCollection(props) {
   return (
     <section id={id} className='container mx-auto flex flex-col gap-4'>
       <HightlightTitle>{title}</HightlightTitle>
-      <div className='vCardCollection p-2'>{cardItemsJSXs}</div>
+      <div className='flex flex-col gap-8 items-center'>{cardItemsJSXs}</div>
     </section>
   );
 }

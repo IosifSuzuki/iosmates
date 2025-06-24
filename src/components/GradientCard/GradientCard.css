@@ -1,0 +1,7 @@
+.gradient-card-container {
+   background: linear-gradient(
+    90deg,
+    theme(colors.hightlight),
+    theme(colors.secondary)
+  );
+}

@@ -1,10 +1,13 @@
 .overview-card {
-  will-change: transform;
-  transition: all 0.2s ease-in-out;
-  transform: scale(1);
-  transform-origin: center;
+  background: linear-gradient(
+    90deg,
+    theme(colors.hightlight),
+    theme(colors.secondary)
+  );
+  padding: 4px;
+  border-radius: 12px;
 }
 
-.overview-card:hover {
-  transform: scale(1.02);
+.overview-card .content {
+  border-radius: 10px;
 }

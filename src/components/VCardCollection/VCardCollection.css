@@ -1,8 +1,1 @@
-.vCardCollection {
-  --spacing: 5vw;
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: var(--spacing);
-  grid-auto-rows: auto;
-  justify-items: center;
-}
+

@@ -14,10 +14,14 @@ import Logo from './Logo/Logo';
 import NavList from './NavList/NavList';
 import MobileMenuToggleButton from './MobileMenuToggleButton/MobileMenuToggleButton';
 
-function getThemeIcon(themeMode) {
+function getThemeIcon(themeMode, isClientGeolocationAvailable) {
   switch (themeMode) {
     case ThemeMode.BRIGHT:
-      return <Settings size={20} />;
+      console.log(isClientGeolocationAvailable);
+      if (isClientGeolocationAvailable) {
+        return <Settings size={20} />;
+      }
+      return <Moon size={20} />;
     case ThemeMode.DARK:
       return <Sun size={20} />;
     case ThemeMode.AUTOMATIC:
@@ -31,14 +35,15 @@ function getThemeTitle(themeMode, isMobile) {
 
 export default function MainNavigation(props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { themeMode, toggleThemeMode } = useTheme();
+  const { themeMode, toggleThemeMode, isClientGeolocationAvailable } =
+    useTheme();
   const ref = props.ref;
   const breakpoint = useBreakpoint();
   const isMobile = isMobileScreen(breakpoint);
 
   const menuItems = items(
     isMobile,
-    getThemeIcon(themeMode),
+    getThemeIcon(themeMode, isClientGeolocationAvailable),
     getThemeTitle(themeMode, isMobile),
   );
   const logoText = props.logoText;
