@@ -24,6 +24,7 @@ import {
 import Footer from './../../components/Footer/Footer';
 import ContactForm from './../../components/ContactForm/ContactForm';
 import Modal from './../../components/Modal/Modal';
+import TechStack from './../../components/TechStack/TechStack';
 
 const benefits = {
   title: 'Why choose us?'.toUpperCase(),
@@ -46,34 +47,57 @@ const benefits = {
   ],
 };
 
-const techStack = {
-  title: 'Tech stacks'.toUpperCase(),
+const engineering = {
+  title: 'Core Engineering',
   items: [
-    new OptionsCardItem('Tools', [
-      new CardItemOption(1, 'Xcode'),
-      new CardItemOption(2, 'Swift Package Manager'),
-      new CardItemOption(3, 'CocoaPods'),
-      new CardItemOption(4, 'Fastlane'),
-      new CardItemOption(5, 'TestFlight'),
-      new CardItemOption(6, 'Sketch/Figma'),
-      new CardItemOption(7, 'Instruments'),
-    ]),
-    new OptionsCardItem('Skills', [
-      new CardItemOption(1, 'Tech Communication'),
-      new CardItemOption(2, 'Swift & Objective-C'),
-      new CardItemOption(3, 'MVVM & MVVM-C'),
-      new CardItemOption(4, 'Swift Composable Architecture'),
-      new CardItemOption(5, 'Swift Concurrency'),
-      new CardItemOption(6, 'UX'),
-    ]),
-    new OptionsCardItem('Storage & Cloud', [
-      new CardItemOption(1, 'Core Data'),
-      new CardItemOption(2, 'File System Management'),
-      new CardItemOption(3, 'Firebase Cloud Firestore'),
-      new CardItemOption(4, 'iCloud'),
-      new CardItemOption(5, 'Keychain & UserDefaults'),
-      new CardItemOption(6, 'REST'),
-    ]),
+    'Swift & Objective-C',
+    'SwiftUI & UIKit',
+    'MVVM-C / Swift Composable Architecture / VIPER',
+    'XCTest & Swift Testing',
+    '❤️ Fastlane CI scripts ❤️',
+  ],
+};
+
+const developingWithData = {
+  title: 'Data & Networking',
+  items: [
+    'Core Data / SwiftData',
+    'Keychain & UserDefaults',
+    'Firebase Cloud Firestore',
+    'REST & GraphQL APIs',
+    'Push Notifications / APNs',
+  ],
+};
+const tools = {
+  title: 'CORE TOOLS',
+  items: [
+    {
+      title: 'XCode',
+      iconURL: 'https://cdn.simpleicons.org/xcode',
+    },
+    {
+      title: 'Swift PM',
+      iconURL: 'https://cdn.simpleicons.org/swift',
+    },
+    {
+      title: 'CocoaPods',
+      iconURL: 'https://cdn.simpleicons.org/cocoapods',
+    },
+    {
+      title: 'Fastlane',
+      iconURL: 'https://cdn.simpleicons.org/fastlane',
+    },
+    {
+      title: 'TestFlight',
+      icon: {
+        bright: 'https://cdn.simpleicons.org/apple/white',
+        dark: 'https://cdn.simpleicons.org/apple/dark',
+      },
+    },
+    {
+      title: 'Sentry',
+      iconURL: 'https://cdn.simpleicons.org/sentry',
+    },
   ],
 };
 
@@ -185,6 +209,11 @@ export default function Index(props) {
           title={benefits.title}
           cardItems={benefits.items}
           style={HCardItemStyle.GRADIENT}
+        />
+        <TechStack
+          tools={tools}
+          engineering={engineering}
+          developingWithData={developingWithData}
         />
         <ContactForm
           id='contact_form'

@@ -6,7 +6,7 @@ export default function IconItem(props) {
   return (
     <div>
       <button className='p-2' onClick={onClick}>
-        <div className='flex row-flex gap-2'>
+        <div className='flex row-flex gap-2 items-center'>
           {icon} <span>{title}</span>
         </div>
       </button>

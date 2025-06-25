@@ -1,0 +1,13 @@
+.tools {
+  background: linear-gradient(
+    90deg,
+    theme(colors.hightlight),
+    theme(colors.secondary)
+  );
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.tools .content {
+  border-radius: 10px;
+}

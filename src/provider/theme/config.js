@@ -31,7 +31,7 @@ export const ThemeMode = {
       case ThemeMode.BRIGHT:
         return 'Bright';
       case ThemeMode.AUTOMATIC:
-        return 'Automatic';
+        return 'Auto';
     }
   },
 };

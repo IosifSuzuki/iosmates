@@ -15,22 +15,37 @@ import NavList from './NavList/NavList';
 import MobileMenuToggleButton from './MobileMenuToggleButton/MobileMenuToggleButton';
 
 function getThemeIcon(themeMode, isClientGeolocationAvailable) {
-  switch (themeMode) {
+  const nextTheme = getNextTheme(themeMode, isClientGeolocationAvailable);
+  switch (nextTheme) {
     case ThemeMode.BRIGHT:
-      console.log(isClientGeolocationAvailable);
-      if (isClientGeolocationAvailable) {
-        return <Settings size={20} />;
-      }
-      return <Moon size={20} />;
-    case ThemeMode.DARK:
       return <Sun size={20} />;
-    case ThemeMode.AUTOMATIC:
+    case ThemeMode.DARK:
       return <Moon size={20} />;
+    case ThemeMode.AUTOMATIC:
+      return <Settings size={20} />;
   }
 }
 
-function getThemeTitle(themeMode, isMobile) {
-  return isMobile ? ThemeMode.title(themeMode) : '';
+function getThemeTitle(themeMode, isMobile, isClientGeolocationAvailable) {
+  if (!isMobile) {
+    return '';
+  }
+  const nextTheme = getNextTheme(themeMode, isClientGeolocationAvailable);
+  return ThemeMode.title(nextTheme);
+}
+
+function getNextTheme(themeMode, isClientGeolocationAvailable) {
+  switch (themeMode) {
+    case ThemeMode.BRIGHT:
+      if (isClientGeolocationAvailable) {
+        return ThemeMode.AUTOMATIC;
+      }
+      return ThemeMode.DARK;
+    case ThemeMode.DARK:
+      return ThemeMode.BRIGHT;
+    case ThemeMode.AUTOMATIC:
+      return ThemeMode.DARK;
+  }
 }
 
 export default function MainNavigation(props) {
@@ -44,7 +59,7 @@ export default function MainNavigation(props) {
   const menuItems = items(
     isMobile,
     getThemeIcon(themeMode, isClientGeolocationAvailable),
-    getThemeTitle(themeMode, isMobile),
+    getThemeTitle(themeMode, isMobile, isClientGeolocationAvailable),
   );
   const logoText = props.logoText;
   let navClassName =

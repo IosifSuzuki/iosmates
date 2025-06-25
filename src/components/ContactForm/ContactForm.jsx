@@ -75,7 +75,6 @@ export default function ContactForm(props) {
       const validationKey = formDataValidation[fieldName];
       const fieldValue = formData[fieldName];
       const validationError = validate(validationKey, fieldValue);
-      console.log(validationKey, fieldValue, validationError);
       if (validationError) {
         hasFormError = true;
         setFormErrors((prevState) => ({

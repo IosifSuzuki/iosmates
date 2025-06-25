@@ -80,7 +80,12 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider
-      value={{ themeMode, toggleThemeMode, isClientGeolocationAvailable }}
+      value={{
+        themeMode,
+        toggleThemeMode,
+        isClientGeolocationAvailable,
+        theme,
+      }}
     >
       {children}
     </ThemeContext.Provider>
