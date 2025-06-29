@@ -1,12 +1,20 @@
 import Showdown from 'showdown';
 
-import { Style, ArticleClassExtension, PreviewClassExtension } from './config';
+import {
+  Style,
+  ArticleClassExtension,
+  PreviewClassExtension,
+  ShortTextClassExtension,
+} from './config';
 
 export default function Converter(style) {
   let extensions = null;
   switch (style) {
     case Style.PREVIEW:
       extensions = PreviewClassExtension;
+      break;
+    case Style.SHORT:
+      extensions = ShortTextClassExtension;
       break;
     default:
       extensions = ArticleClassExtension;

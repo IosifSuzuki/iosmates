@@ -1,0 +1,67 @@
+{
+  "hash": "f1ac1fe2",
+  "configHash": "dc57a35a",
+  "lockfileHash": "67ce6769",
+  "browserHash": "421f3f4e",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "8f06852b",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "6631063b",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "8007d00a",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "c1d479a1",
+      "needsInterop": false
+    },
+    "@emailjs/browser": {
+      "src": "../../node_modules/@emailjs/browser/es/index.js",
+      "file": "@emailjs_browser.js",
+      "fileHash": "2f6c0202",
+      "needsInterop": false
+    },
+    "showdown": {
+      "src": "../../node_modules/showdown/dist/showdown.js",
+      "file": "showdown.js",
+      "fileHash": "965a521b",
+      "needsInterop": true
+    },
+    "react-ga4": {
+      "src": "../../node_modules/react-ga4/dist/index.js",
+      "file": "react-ga4.js",
+      "fileHash": "eea4d6e6",
+      "needsInterop": true
+    },
+    "tailwindcss/resolveConfig": {
+      "src": "../../node_modules/tailwindcss/resolveConfig.js",
+      "file": "tailwindcss_resolveConfig.js",
+      "fileHash": "70c3bd99",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-TKHB4QMX": {
+      "file": "chunk-TKHB4QMX.js"
+    },
+    "chunk-YLDSBLSF": {
+      "file": "chunk-YLDSBLSF.js"
+    },
+    "chunk-DC5AMYBS": {
+      "file": "chunk-DC5AMYBS.js"
+    }
+  }
+}

@@ -5,6 +5,7 @@ import { CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 import { contactForms, company } from './../../services/shared/data';
+import { getServices } from './../../services/shared/services';
 
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
 import Intro from './../../components/Intro/Intro';
@@ -16,7 +17,6 @@ import {
   VCardItemStyle,
   VCardCollection,
 } from './../../components/VCardCollection/VCardCollection';
-import { OverviewCardItem } from './../../components/OverviewCard/OverviewCard';
 import {
   CardItemOption,
   OptionsCardItem,
@@ -101,20 +101,6 @@ const tools = {
   ],
 };
 
-const services = {
-  title: 'Our Services'.toUpperCase(),
-  items: [
-    new OverviewCardItem(
-      'Custom iOS App Development',
-      'Own the App Store We craft pixel-perfect Swift / SwiftUI apps that launch fast and run flawlessly. From discovery through QA & release – we ship, you scale.',
-    ),
-    new OverviewCardItem(
-      'On-Demand iOS Engineers',
-      'Scale without hiring headaches Plug vetted senior iOS engineers into your workflow in under 14 days. Velocity, peer reviews, zero onboarding drama – just results.',
-    ),
-  ],
-};
-
 export default function Index(props) {
   const navigate = useNavigate();
   const contactFormRef = useRef();
@@ -124,6 +110,7 @@ export default function Index(props) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
   const [modalDescription, setModalDescription] = useState('');
+  const [services, setServices] = useState([]);
 
   useEffect(() => {
     const emailJsPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
@@ -135,6 +122,21 @@ export default function Index(props) {
         throttle: throttleSeconds * 10000,
       },
     });
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getServices();
+        const services = data.map((item) => item.content);
+        setServices(services);
+      } catch (error) {
+        setServices([]);
+        console.error('error fetching services:', error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   useEffect(() => {
@@ -201,9 +203,9 @@ export default function Index(props) {
         />
         <VCardCollection
           id='services'
-          title={services.title}
-          cardItems={services.items}
-          style={VCardItemStyle.PLAIN}
+          title='SERVICES'
+          items={services}
+          style={VCardItemStyle.MDCard}
         />
         <HCardCollection
           title={benefits.title}

@@ -1,31 +1,24 @@
 import './VCardCollection.css';
 
 import HightlightTitle from './../HightlightTitle/HightlightTitle';
-import OverviewCard from './../OverviewCard/OverviewCard';
+import MDCard from './../MDCard/MDCard';
 
 export const VCardItemStyle = {
-  PLAIN: 'plain',
+  MDCard: 'MD_CARD',
 };
 
 export function VCardCollection(props) {
   const id = props.id;
   const title = props.title;
   const style = props.style;
-  const cardItems = props.cardItems;
+  const items = props.items;
 
   let cardItemsJSXs = [];
 
   switch (style) {
-    case VCardItemStyle.PLAIN:
-      cardItemsJSXs = cardItems.map((cardItem, idx) => {
-        return (
-          <OverviewCard
-            key={idx}
-            title={cardItem.title}
-            subtitle={cardItem.subtitle}
-            className='w-4/5 md:w-1/2'
-          />
-        );
+    case VCardItemStyle.MDCard:
+      cardItemsJSXs = items.map((item, idx) => {
+        return <MDCard key={idx} content={item} className='w-4/5 md:w-1/2' />;
       });
       break;
   }

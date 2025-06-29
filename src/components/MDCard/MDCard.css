@@ -1,4 +1,4 @@
-.overview-card {
+.md-card {
   background: linear-gradient(
     90deg,
     theme(colors.hightlight),
@@ -8,6 +8,6 @@
   border-radius: 12px;
 }
 
-.overview-card .content {
+.md-card .content {
   border-radius: 10px;
 }
