@@ -33,14 +33,14 @@ async function fetchData(baseUrl, latitude, longitude) {
   url.pathname = '/json';
   url.searchParams.set('lat', latitude);
   url.searchParams.set('lng', longitude);
-  url.searchParams.set('formatted', 0);
+  url.searchParams.set('time_format', 'unix');
   url.searchParams.set('date', 'today');
 
   const response = await fetch(url.toString());
   const data = await response.json();
   return {
-    sunrise: new Date(data['results']['sunrise']),
-    sunset: new Date(data['results']['sunset']),
+    sunrise: new Date(Number(data['results']['sunrise']) * 1000),
+    sunset: new Date(Number(data['results']['sunset']) * 1000),
   };
 }
 

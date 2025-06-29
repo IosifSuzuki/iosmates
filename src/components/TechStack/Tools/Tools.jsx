@@ -13,7 +13,7 @@ export default function Tools(props) {
   return (
     <div className=''>
       <div className='tools'>
-        <div className='content bg-overlay flex flex-col items-center gap-5 p-2 md:p-8'>
+        <div className='content bg-overlay flex flex-col items-center gap-5 py-8 px-2 md:p-8'>
           <h3 className='text-center text-title font-bold text-xl'>{title}</h3>
           <HScroll
             items={items.map((item, idx) => {

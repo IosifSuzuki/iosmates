@@ -12,7 +12,7 @@ export const ItemTag = {
   THEME: 'theme',
 };
 
-export function items(isMobile, themeIcon, themeTitle) {
+export function items(isMobile, themeIcon, themeTitle, themeTooltip) {
   return [
     {
       title: 'Services',
@@ -22,7 +22,7 @@ export function items(isMobile, themeIcon, themeTitle) {
     },
     {
       title: 'About us',
-      path: '/#footer',
+      path: '/about_us',
       tag: ItemTag.ABOUT_US,
       style: ItemStyles.PLAIN,
     },
@@ -43,6 +43,7 @@ export function items(isMobile, themeIcon, themeTitle) {
       path: null,
       icon: themeIcon,
       tag: ItemTag.THEME,
+      tooltip: themeTooltip,
       style: ItemStyles.ICON,
     },
   ];

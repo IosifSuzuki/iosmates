@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Settings, Moon, Sun } from 'lucide-react';
 
 import './MainNavigation.css';
@@ -7,7 +7,9 @@ import { useBreakpoint } from './../../hooks/useBreakpoint/useBreakpoint';
 import { useTheme } from './../../provider/theme/theme';
 import { ThemeMode } from './../../provider/theme/config';
 import { isMobileScreen } from './../../utils/screen';
+import { timeFormatted } from './../../utils/date';
 import { scrollToSection } from './../../utils/html';
+import SunTimes from './../../services/sunTimes/sunTimes';
 
 import { items, ItemStyles, ItemTag } from './Item';
 import Logo from './Logo/Logo';
@@ -55,13 +57,26 @@ export default function MainNavigation(props) {
   const ref = props.ref;
   const breakpoint = useBreakpoint();
   const isMobile = isMobileScreen(breakpoint);
+  const [sunTimesTooltip, setSunTimesTooltip] = useState('');
 
   const menuItems = items(
     isMobile,
     getThemeIcon(themeMode, isClientGeolocationAvailable),
     getThemeTitle(themeMode, isMobile, isClientGeolocationAvailable),
+    sunTimesTooltip,
   );
   const logoText = props.logoText;
+  const sunTimes = new SunTimes();
+  useEffect(() => {
+    const getSunTimes = async () => {
+      const data = await sunTimes.getSunTimes();
+      const tooltip = `Sun rise: ${timeFormatted(data.sunrise)}\nSun set: ${timeFormatted(data.sunset)}`;
+      setSunTimesTooltip(tooltip);
+    };
+
+    getSunTimes();
+  }, []);
+
   let navClassName =
     'container px-6 md:px-10 flex-col w-full mx-auto py-4 text-subtitle';
   if (isMobile && isMobileMenuOpen) {

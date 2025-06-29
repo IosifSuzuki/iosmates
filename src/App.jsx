@@ -10,6 +10,7 @@ import Index from './screens/Index/Index';
 import PrivacyPolicy from './screens/PrivacyPolicy/PrivacyPolicy';
 import WorkDetails from './screens/WorkDetails/WorkDetails';
 import OurWorks from './screens/OurWorks/OurWorks';
+import AboutUs from './screens/AboutUs/AboutUs';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='privacy-policy' element={<PrivacyPolicy />} />
           <Route path='works' element={<OurWorks />} />
           <Route path='work/details/:name' element={<WorkDetails />} />
+          <Route path='about_us' element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

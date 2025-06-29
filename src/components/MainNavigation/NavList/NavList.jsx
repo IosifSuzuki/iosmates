@@ -16,7 +16,7 @@ export default function NavList(props) {
   ]
     .filter(Boolean)
     .join(' ');
-
+  console.log(items);
   const itemJSXs = items.map((item, idx) => {
     switch (item.style) {
       case ItemStyles.PLAIN:
@@ -50,6 +50,7 @@ export default function NavList(props) {
           <IconItem
             icon={item.icon}
             title={item.title}
+            tooltip={item.tooltip}
             key={idx}
             onClick={onClick.bind(undefined, item.tag)}
           />

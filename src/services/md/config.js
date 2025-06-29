@@ -32,6 +32,11 @@ export const ArticleClassExtension = () => {
       replace:
         '<ul class="text-regular list-disc px-8 list-inside leading-8"$1>',
     },
+    {
+      type: 'output',
+      regex: /<a([^>]*)>/g,
+      replace: '<a class="text-hightlight font-bold"$1>',
+    },
   ];
 };
 
