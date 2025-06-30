@@ -1,0 +1,86 @@
+{
+  "benefits": {
+    "title": "Why choose us?",
+    "items": [
+      {
+        "title": "20-30 % cheaper",
+        "subtitle": "Lower rates than local hires with no compromise on seniority."
+      },
+      {
+        "title": "8-week launches",
+        "subtitle": "Proven playbook ships version 1 to the App Store—fast."
+      },
+      {
+        "title": "Senior-only team",
+        "subtitle": "Every engineer has 5–10 years shipping Swift in production."
+      }
+    ]
+  },
+  "engineering": {
+    "title": "Core Engineering",
+    "items": [
+      "Swift & Objective-C",
+      "SwiftUI & UIKit",
+      "MVVM-C / Swift Composable Architecture / VIPER",
+      "XCTest & Swift Testing",
+      "❤️ Fastlane CI scripts ❤️"
+    ]
+  },
+  "designData": {
+    "title": "Data & Networking",
+    "items": [
+      "Core Data / SwiftData",
+      "Keychain & UserDefaults",
+      "Firebase Cloud Firestore",
+      "REST & GraphQL APIs",
+      "Push Notifications / APNs"
+    ]
+  },
+  "tools": {
+    "title": "CORE TOOLS",
+    "items": [
+      {
+        "title": "XCode",
+        "icon": {
+          "bright": "https://cdn.simpleicons.org/xcode",
+          "dark": "https://cdn.simpleicons.org/xcode"
+        }
+      },
+      {
+        "title": "Swift PM",
+        "icon": {
+          "bright": "https://cdn.simpleicons.org/swift",
+          "dark": "https://cdn.simpleicons.org/swift"
+        }
+      },
+      {
+        "title": "CocoaPods",
+        "icon": {
+          "bright": "https://cdn.simpleicons.org/cocoapods",
+          "dark": "https://cdn.simpleicons.org/cocoapods"
+        }
+      },
+      {
+        "title": "Fastlane",
+        "icon": {
+          "bright": "https://cdn.simpleicons.org/fastlane",
+          "dark": "https://cdn.simpleicons.org/fastlane"
+        }
+      },
+      {
+        "title": "TestFlight",
+        "icon": {
+          "bright": "https://cdn.simpleicons.org/apple/white",
+          "dark": "https://cdn.simpleicons.org/apple/dark"
+        }
+      },
+      {
+        "title": "Sentry",
+        "icon": {
+          "bright": "https://cdn.simpleicons.org/sentry/white",
+          "dark": "https://cdn.simpleicons.org/sentry/dark"
+        }
+      }
+    ]
+  }
+}

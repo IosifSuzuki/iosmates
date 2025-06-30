@@ -7,7 +7,7 @@ export const HCardItemStyle = {
 };
 
 export function HCardCollection(props) {
-  const title = props.title;
+  const title = props.title.toUpperCase();
   const cardItems = props.cardItems;
   const style = props.style;
   const id = props.id;

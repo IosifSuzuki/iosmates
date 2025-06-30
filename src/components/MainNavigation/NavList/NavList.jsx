@@ -16,7 +16,6 @@ export default function NavList(props) {
   ]
     .filter(Boolean)
     .join(' ');
-  console.log(items);
   const itemJSXs = items.map((item, idx) => {
     switch (item.style) {
       case ItemStyles.PLAIN:

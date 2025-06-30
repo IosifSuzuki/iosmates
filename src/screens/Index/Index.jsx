@@ -6,6 +6,12 @@ import emailjs from '@emailjs/browser';
 
 import { contactForms, company } from './../../services/shared/data';
 import { getServices } from './../../services/shared/services';
+import {
+  getBenefits,
+  getEngineering,
+  getDesignData,
+  getTools,
+} from './../../services/shared/index';
 
 import MainNavigation from './../../components/MainNavigation/MainNavigation';
 import Intro from './../../components/Intro/Intro';
@@ -26,81 +32,6 @@ import ContactForm from './../../components/ContactForm/ContactForm';
 import Modal from './../../components/Modal/Modal';
 import TechStack from './../../components/TechStack/TechStack';
 
-const benefits = {
-  title: 'Why choose us?'.toUpperCase(),
-  items: [
-    {
-      icon: <CheckCircle color='#fff' size={28} strokeWidth={2} />,
-      title: '20-30 % cheaper',
-      subtitle: 'Lower rates than local hires with no compromise on seniority.',
-    },
-    {
-      icon: <CheckCircle color='#fff' size={28} strokeWidth={2} />,
-      title: '8-week launches',
-      subtitle: 'Proven playbook ships version 1 to the App Store—fast.',
-    },
-    {
-      icon: <CheckCircle color='#fff' size={28} strokeWidth={2} />,
-      title: 'Senior-only team',
-      subtitle: 'Every engineer has 5–10 years shipping Swift in production.',
-    },
-  ],
-};
-
-const engineering = {
-  title: 'Core Engineering',
-  items: [
-    'Swift & Objective-C',
-    'SwiftUI & UIKit',
-    'MVVM-C / Swift Composable Architecture / VIPER',
-    'XCTest & Swift Testing',
-    '❤️ Fastlane CI scripts ❤️',
-  ],
-};
-
-const developingWithData = {
-  title: 'Data & Networking',
-  items: [
-    'Core Data / SwiftData',
-    'Keychain & UserDefaults',
-    'Firebase Cloud Firestore',
-    'REST & GraphQL APIs',
-    'Push Notifications / APNs',
-  ],
-};
-const tools = {
-  title: 'CORE TOOLS',
-  items: [
-    {
-      title: 'XCode',
-      iconURL: 'https://cdn.simpleicons.org/xcode',
-    },
-    {
-      title: 'Swift PM',
-      iconURL: 'https://cdn.simpleicons.org/swift',
-    },
-    {
-      title: 'CocoaPods',
-      iconURL: 'https://cdn.simpleicons.org/cocoapods',
-    },
-    {
-      title: 'Fastlane',
-      iconURL: 'https://cdn.simpleicons.org/fastlane',
-    },
-    {
-      title: 'TestFlight',
-      icon: {
-        bright: 'https://cdn.simpleicons.org/apple/white',
-        dark: 'https://cdn.simpleicons.org/apple/dark',
-      },
-    },
-    {
-      title: 'Sentry',
-      iconURL: 'https://cdn.simpleicons.org/sentry',
-    },
-  ],
-};
-
 export default function Index(props) {
   const navigate = useNavigate();
   const contactFormRef = useRef();
@@ -111,6 +42,17 @@ export default function Index(props) {
   const [modalTitle, setModalTitle] = useState('');
   const [modalDescription, setModalDescription] = useState('');
   const [services, setServices] = useState([]);
+
+  const tools = getTools();
+  const benefits = getBenefits();
+  const designData = getDesignData();
+  const engineering = getEngineering();
+
+  for (let i = 0; i < benefits.items.length; i++) {
+    benefits.items[i].icon = (
+      <CheckCircle color='#fff' size={28} strokeWidth={2} />
+    );
+  }
 
   useEffect(() => {
     const emailJsPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
@@ -215,7 +157,7 @@ export default function Index(props) {
         <TechStack
           tools={tools}
           engineering={engineering}
-          developingWithData={developingWithData}
+          designData={designData}
         />
         <ContactForm
           id='contact_form'

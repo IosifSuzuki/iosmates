@@ -17,15 +17,13 @@ export default function Tools(props) {
           <h3 className='text-center text-title font-bold text-xl'>{title}</h3>
           <HScroll
             items={items.map((item, idx) => {
-              let iconURL = item.iconURL;
-              if (!iconURL) {
-                switch (theme) {
-                  case 'dark':
-                    iconURL = item.icon.bright;
-                    break;
-                  case 'bright':
-                    iconURL = item.icon.dark;
-                }
+              let iconURL = null;
+              switch (theme) {
+                case 'dark':
+                  iconURL = item.icon.bright;
+                  break;
+                case 'bright':
+                  iconURL = item.icon.dark;
               }
               return (
                 <Item

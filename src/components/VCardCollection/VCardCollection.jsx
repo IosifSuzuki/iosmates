@@ -9,7 +9,7 @@ export const VCardItemStyle = {
 
 export function VCardCollection(props) {
   const id = props.id;
-  const title = props.title;
+  const title = props.title.toUpperCase();
   const style = props.style;
   const items = props.items;
 
