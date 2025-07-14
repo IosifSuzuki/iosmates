@@ -77,7 +77,6 @@ export default function Index(props) {
         console.error('error fetching services:', error);
       }
     };
-
     fetchData();
   }, []);
 

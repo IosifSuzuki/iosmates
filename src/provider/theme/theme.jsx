@@ -1,6 +1,7 @@
 import { useState, createContext, useContext, useEffect } from 'react';
 import { ThemeMode } from './config.js';
 import SunTimes from './../../services/sunTimes/sunTimes';
+import useCookie from './../../hooks/useCookie/useCookie';
 
 import { isGeolocationAvailable } from './../../utils/geolocation';
 
@@ -28,6 +29,7 @@ export const ThemeProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(
     localStorage.getItem('theme_mode') ?? ThemeMode.DARK,
   );
+  const [cookieConsestValue] = useCookie('cookie_consest');
   const [theme, setTheme] = useState(ThemeMode.theme(themeMode));
   const [isClientGeolocationAvailable, setIsClientGeolocationAvailable] =
     useState(false);
@@ -36,7 +38,9 @@ export const ThemeProvider = ({ children }) => {
     let newMode = ThemeMode.toggle(themeMode);
     if (!isClientGeolocationAvailable && newMode === ThemeMode.AUTOMATIC) {
       newMode = ThemeMode.toggle(newMode);
-      console.log(newMode);
+    }
+    if (!Boolean(cookieConsestValue) && newMode === ThemeMode.AUTOMATIC) {
+      newMode = ThemeMode.toggle(newMode);
     }
     setThemeMode(newMode);
     localStorage.setItem('theme_mode', newMode);
@@ -75,7 +79,9 @@ export const ThemeProvider = ({ children }) => {
         await isGeolocationAvailable();
       setIsClientGeolocationAvailable(updatedIsClientGeolocationAvailable);
     };
-    checkClientGeolocation();
+    if (Boolean(cookieConsestValue)) {
+      checkClientGeolocation();
+    }
   }, [themeMode]);
 
   return (

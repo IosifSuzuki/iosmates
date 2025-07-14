@@ -4,8 +4,6 @@ export default function IconItem(props) {
   const onClick = props.onClick;
   const tooltip = props.tooltip;
 
-  console.log(tooltip);
-
   return (
     <div>
       <button title={tooltip} className='p-2' onClick={onClick}>
